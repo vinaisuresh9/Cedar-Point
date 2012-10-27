@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/blue_streak"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="13dp"
@@ -19,9 +19,7 @@
         android:id="@+id/blue_streak_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/blue_streak"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/blue_streak"
         android:textOff="No"
         android:textOn="Yes" />
     
@@ -29,7 +27,9 @@
     <TextView
         android:id="@+id/calypso"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/calypso_button"
+        android:layout_alignBottom="@+id/calypso_button"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/blue_streak"
         android:layout_marginTop="14dp"
@@ -40,9 +40,8 @@
         android:id="@+id/calypso_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/calypso"
+        android:layout_below="@+id/blue_streak_button"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/calypso"
         android:textOff="No"
         android:textOn="Yes" />
 
@@ -51,8 +50,10 @@
     <TextView
         android:id="@+id/cedar_mine"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/cedar_mine_button"
+        android:layout_alignBottom="@+id/cedar_mine_button"
         android:layout_below="@+id/calypso"
         android:layout_marginTop="14dp"
         android:text="@string/cedar_creek_mine"
@@ -62,9 +63,81 @@
         android:id="@+id/cedar_mine_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cedar_mine"
+        android:layout_below="@+id/calypso_button"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/cedar_mine"
+        android:textOff="No"
+        android:textOn="Yes" />
+    
+    
+     <!-- Cedar Downs Racing Derby -->
+
+    <TextView
+        android:id="@+id/cedar_downs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/cedar_downs_button"
+        android:layout_alignBottom="@+id/cedar_downs_button"
+        android:layout_below="@+id/cedar_mine"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/cedar_downs_button"
+        android:text="@string/cedar_downs"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ToggleButton
+        android:id="@+id/cedar_downs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cedar_mine_button"
+        android:layout_alignParentRight="true"
+        android:textOff="No"
+        android:textOn="Yes" />
+    
+    <!-- Corkscrew -->
+
+    <TextView
+        android:id="@+id/corkscrew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/corkscrew_button"
+        android:layout_alignBottom="@+id/corkscrew_button"
+        android:layout_below="@+id/cedar_downs"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/corkscrew_button"
+        android:text="@string/corkscrew"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ToggleButton
+        android:id="@+id/corkscrew_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cedar_downs_button"
+        android:layout_alignParentRight="true"
+        android:textOff="No"
+        android:textOn="Yes" />
+    
+     <!-- Corkscrew -->
+
+    <TextView
+        android:id="@+id/dodgem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/dodgem_button"
+        android:layout_alignBottom="@+id/dodgem_button"
+        android:layout_below="@+id/corkscrew"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/dodgem_button"
+        android:text="@string/dodgem"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ToggleButton
+        android:id="@+id/dodgem_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/corkscrew_button"
+        android:layout_alignParentRight="true"
         android:textOff="No"
         android:textOn="Yes" />
     
