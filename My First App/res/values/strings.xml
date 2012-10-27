@@ -10,9 +10,7 @@
     <string name="enabled">YES</string>
     <string name="disabled">NO</string>
     <string name="blue_streak">Blue Streak</string>
-    <string-array name="Rides">
-        <item >Antique Cars</item>
-        <item >Blue Streak</item>
-    </string-array>
+    <string name="cedar_creek_mine">Cedar Creek Mine Ride</string>
+    <string name="calypso">Calypso</string>
 
 </resources>
