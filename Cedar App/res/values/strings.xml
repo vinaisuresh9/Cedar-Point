@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Cedar App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_listof_rides">ListofRides</string>
+    <string name="blue_streak">Blue Streak</string>
+    <string name="cedar_creek_mine">Cedar Creek Mine Ride</string>
+    <string name="calypso">Calypso</string>
+
+</resources>
