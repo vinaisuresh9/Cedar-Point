@@ -19,5 +19,20 @@
     <string name="maverick">Maverick</string>
     <string name="maxair">MaXair</string>
     <string name="mean_streak">Mean Streak</string>
+    <string name="millenium_force">Millenium Force</string>
+    <string name="monster">Monster</string>
+    <string name="ocean_motion">Ocean Motion</string>
+    <string name="power_tower">Power Tower</string>
+    <string name="raptor">Raptor</string>
+    <string name="scrambler">Scrambler</string>
+    <string name="skyhawk">Skyhawk</string>
+    <string name="super_himalaya">Super Himalaya</string>
+    <string name="top_thrill">Top Thrill Dragster</string>
+    <string name="troika">Troika</string>
+    <string name="wave_swinger">Wave Swinger</string>
+    <string name="wicked_twister">Wicked Twister</string>
+    <string name="wind_seeker">WindSeeker</string>
+    <string name="witches_wheel">Witches\' Wheel</string>
+    <string name="woodstock_express">Woodstock Express</string>
 
 </resources>

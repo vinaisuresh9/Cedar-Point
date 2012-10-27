@@ -16,7 +16,6 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignParentTop="true"
-	        android:layout_marginTop="13dp"
 	        android:text="@string/blue_streak"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
@@ -37,7 +36,6 @@
 	        android:layout_alignBottom="@+id/calypso_button"
 	        android:layout_alignParentLeft="true"
 	        android:layout_below="@+id/blue_streak"
-	        android:layout_marginTop="14dp"
 	        android:text="@string/calypso"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
@@ -46,6 +44,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/blue_streak_button"
+	        android:layout_marginTop="15dp"
 	        android:layout_alignParentRight="true"
 	        android:textOff="No"
 	        android:textOn="Yes" />
@@ -60,7 +59,6 @@
 	        android:layout_alignTop="@+id/cedar_mine_button"
 	        android:layout_alignBottom="@+id/cedar_mine_button"
 	        android:layout_below="@+id/calypso"
-	        android:layout_marginTop="14dp"
 	        android:text="@string/cedar_creek_mine"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
@@ -70,6 +68,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/calypso_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -84,7 +83,6 @@
 	        android:layout_alignTop="@+id/cedar_downs_button"
 	        android:layout_alignBottom="@+id/cedar_downs_button"
 	        android:layout_below="@+id/cedar_mine"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/cedar_downs_button"
 	        android:text="@string/cedar_downs"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -95,6 +93,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/cedar_mine_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -108,7 +107,6 @@
 	        android:layout_alignTop="@+id/corkscrew_button"
 	        android:layout_alignBottom="@+id/corkscrew_button"
 	        android:layout_below="@+id/cedar_downs"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/corkscrew_button"
 	        android:text="@string/corkscrew"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -119,6 +117,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/cedar_downs_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -132,7 +131,6 @@
 	        android:layout_alignTop="@+id/dodgem_button"
 	        android:layout_alignBottom="@+id/dodgem_button"
 	        android:layout_below="@+id/corkscrew"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/dodgem_button"
 	        android:text="@string/dodgem"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -143,6 +141,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/corkscrew_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -156,7 +155,6 @@
 	        android:layout_alignTop="@+id/gemini_button"
 	        android:layout_alignBottom="@+id/gemini_button"
 	        android:layout_below="@+id/dodgem"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/gemini_button"
 	        android:text="@string/gemini"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -167,6 +165,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/dodgem_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -180,7 +179,6 @@
 	        android:layout_alignTop="@+id/iron_dragon_button"
 	        android:layout_alignBottom="@+id/iron_dragon_button"
 	        android:layout_below="@+id/gemini"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/iron_dragon_button"
 	        android:text="@string/iron_dragon"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -191,6 +189,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/gemini_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -204,7 +203,6 @@
 	        android:layout_alignTop="@+id/junior_gemini_button"
 	        android:layout_alignBottom="@+id/junior_gemini_button"
 	        android:layout_below="@+id/iron_dragon"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/junior_gemini_button"
 	        android:text="@string/junior_gemini"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -215,6 +213,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/iron_dragon_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -228,7 +227,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/magnum_xl200_button"
 	        android:layout_below="@+id/junior_gemini"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/magnum_xl200_button"
 	        android:text="@string/magnum_xl200"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -239,6 +237,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/junior_gemini_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -251,7 +250,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/mantis_button"
 	        android:layout_below="@+id/magnum_xl200"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/mantis_button"
 	        android:text="@string/mantis"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -262,6 +260,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/magnum_xl200_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -275,7 +274,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/matterhorn_button"
 	        android:layout_below="@+id/mantis"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/matterhorn_button"
 	        android:text="@string/matterhorn"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -286,6 +284,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/mantis_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -298,7 +297,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/maverick_button"
 	        android:layout_below="@+id/matterhorn"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/maverick_button"
 	        android:text="@string/maverick"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -309,6 +307,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/matterhorn_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -322,7 +321,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/maxair_button"
 	        android:layout_below="@+id/maverick"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/maxair_button"
 	        android:text="@string/maxair"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -333,6 +331,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/maverick_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	    
@@ -345,7 +344,6 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignTop="@+id/mean_streak_button"
 	        android:layout_below="@+id/maxair"
-	        android:layout_marginTop="14dp"
 	        android:layout_toLeftOf="@+id/mean_streak_button"
 	        android:text="@string/mean_streak"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -356,9 +354,364 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/maxair_button"
 	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Millenium Force -->
+	
+	    <TextView
+	        android:id="@+id/millenium_force"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/millenium_force_button"
+	        android:layout_below="@+id/mean_streak"
+	        android:layout_toLeftOf="@+id/millenium_force_button"
+	        android:text="@string/millenium_force"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/millenium_force_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/mean_streak_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	     <!-- Monster -->
+	
+	    <TextView
+	        android:id="@+id/monster"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/monster_button"
+	        android:layout_below="@+id/millenium_force"
+	        android:layout_toLeftOf="@+id/monster_button"
+	        android:text="@string/monster"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/monster_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/millenium_force_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    
+	    <!-- Ocean Motion -->
+	
+	    <TextView
+	        android:id="@+id/ocean_motion"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/ocean_motion_button"
+	        android:layout_below="@+id/monster"
+	        android:layout_toLeftOf="@+id/ocean_motion_button"
+	        android:text="@string/ocean_motion"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/ocean_motion_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/monster_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	     <!-- Power Tower -->
+	
+	    <TextView
+	        android:id="@+id/power_tower"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/power_tower_button"
+	        android:layout_below="@+id/ocean_motion"
+	        android:layout_toLeftOf="@+id/power_tower_button"
+	        android:text="@string/power_tower"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/power_tower_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/ocean_motion_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />
 	
+	    
+	    <!-- Raptor -->
+	
+	    <TextView
+	        android:id="@+id/raptor"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/raptor_button"
+	        android:layout_below="@+id/power_tower"
+	        android:layout_toLeftOf="@+id/raptor_button"
+	        android:text="@string/raptor"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/raptor_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/power_tower_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+		 <!-- Scrambler -->
+	
+	    <TextView
+	        android:id="@+id/scrambler"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/scrambler_button"
+	        android:layout_below="@+id/raptor"
+	        android:layout_toLeftOf="@+id/scrambler_button"
+	        android:text="@string/scrambler"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/scrambler_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/raptor_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	    
+	        
+	    
+	    <!-- Skyhawk -->
+	
+	    <TextView
+	        android:id="@+id/skyhawk"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/skyhawk_button"
+	        android:layout_below="@+id/scrambler"
+	        android:layout_toLeftOf="@+id/skyhawk_button"
+	        android:text="@string/skyhawk"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/skyhawk_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/scrambler_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	 
+	    
+	    
+	     <!-- Super Himalaya -->
+	
+	    <TextView
+	        android:id="@+id/super_himalaya"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/super_himalaya_button"
+	        android:layout_below="@+id/skyhawk"
+	        android:layout_toLeftOf="@+id/super_himalaya_button"
+	        android:text="@string/super_himalaya"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/super_himalaya_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/skyhawk_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	 
+	        
+	    
+	    <!-- Top Thrill Dragster -->
+	
+	    <TextView
+	        android:id="@+id/top_thrill"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/top_thrill_button"
+	        android:layout_below="@+id/super_himalaya"
+	        android:layout_toLeftOf="@+id/top_thrill_button"
+	        android:text="@string/top_thrill"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/top_thrill_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/super_himalaya_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+	    <!-- Troika -->
+	
+	    <TextView
+	        android:id="@+id/troika"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/troika_button"
+	        android:layout_below="@+id/top_thrill"
+	        android:layout_toLeftOf="@+id/troika_button"
+	        android:text="@string/troika"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/troika_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/top_thrill_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+	    
+	    <!-- Wave Swinger -->
+	
+	    <TextView
+	        android:id="@+id/wave_swinger"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/wave_swinger_button"
+	        android:layout_below="@+id/troika"
+	        android:layout_toLeftOf="@+id/wave_swinger_button"
+	        android:text="@string/wave_swinger"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/wave_swinger_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/troika_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	    
+	    <!-- Wicked Twister -->
+	
+	    <TextView
+	        android:id="@+id/wicked_twister"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/wicked_twister_button"
+	        android:layout_below="@+id/wave_swinger"
+	        android:layout_toLeftOf="@+id/wicked_twister_button"
+	        android:text="@string/wicked_twister"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/wicked_twister_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/wave_swinger_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+	    
+	    <!-- Wind Seeker -->
+	
+	    <TextView
+	        android:id="@+id/wind_seeker"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/wind_seeker_button"
+	        android:layout_below="@+id/wicked_twister"
+	        android:layout_toLeftOf="@+id/wind_seeker_button"
+	        android:text="@string/wind_seeker"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/wind_seeker_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/wicked_twister_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+	    
+	    <!-- Witches' Wheel -->
+	
+	    <TextView
+	        android:id="@+id/witches_wheel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/witches_wheel_button"
+	        android:layout_below="@+id/wind_seeker"
+	        android:layout_toLeftOf="@+id/witches_wheel_button"
+	        android:text="@string/witches_wheel"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/witches_wheel_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/wind_seeker_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+		<!-- Woodstock Express -->
+	
+	    <TextView
+	        android:id="@+id/woodstock_express"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/woodstock_express_button"
+	        android:layout_below="@+id/witches_wheel"
+	        android:layout_toLeftOf="@+id/woodstock_express_button"
+	        android:text="@string/woodstock_express"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/woodstock_express_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/witches_wheel_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
+	        
+	    
 	</RelativeLayout>
 	
 	
