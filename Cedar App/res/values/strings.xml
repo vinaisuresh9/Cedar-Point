@@ -10,5 +10,14 @@
     <string name="cedar_downs">Cedar Racing Derby</string>
     <string name="corkscrew">Corkscrew</string>
     <string name="dodgem">Dodgem</string>
+    <string name="gemini">Gemini</string>
+    <string name="iron_dragon">Iron Dragon</string>
+    <string name="junior_gemini">Jr. Gemini</string>
+    <string name="magnum_xl200">Magnum XL-200</string>
+    <string name="mantis">Mantis</string>
+    <string name="matterhorn">Matterhorn</string>
+    <string name="maverick">Maverick</string>
+    <string name="maxair">MaXair</string>
+    <string name="mean_streak">Mean Streak</string>
 
 </resources>

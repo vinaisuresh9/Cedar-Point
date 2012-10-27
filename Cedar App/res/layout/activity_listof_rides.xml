@@ -1,147 +1,365 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
-    
-     <!-- Blue Streak -->
-    <TextView
-        android:id="@+id/blue_streak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="13dp"
-        android:text="@string/blue_streak"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent" 
+	    android:layout_height= "fill_parent">
 
-    <ToggleButton
-        android:id="@+id/blue_streak_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-    
-    <!-- Calypso -->
-    <TextView
-        android:id="@+id/calypso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/calypso_button"
-        android:layout_alignBottom="@+id/calypso_button"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/blue_streak"
-        android:layout_marginTop="14dp"
-        android:text="@string/calypso"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    <ToggleButton
-        android:id="@+id/calypso_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/blue_streak_button"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-
-    
-     <!-- Cedar Mine Ride -->
-    <TextView
-        android:id="@+id/cedar_mine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/cedar_mine_button"
-        android:layout_alignBottom="@+id/cedar_mine_button"
-        android:layout_below="@+id/calypso"
-        android:layout_marginTop="14dp"
-        android:text="@string/cedar_creek_mine"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ToggleButton
-        android:id="@+id/cedar_mine_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/calypso_button"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-    
-    
-     <!-- Cedar Downs Racing Derby -->
-
-    <TextView
-        android:id="@+id/cedar_downs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/cedar_downs_button"
-        android:layout_alignBottom="@+id/cedar_downs_button"
-        android:layout_below="@+id/cedar_mine"
-        android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/cedar_downs_button"
-        android:text="@string/cedar_downs"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ToggleButton
-        android:id="@+id/cedar_downs_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cedar_mine_button"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-    
-    <!-- Corkscrew -->
-
-    <TextView
-        android:id="@+id/corkscrew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/corkscrew_button"
-        android:layout_alignBottom="@+id/corkscrew_button"
-        android:layout_below="@+id/cedar_downs"
-        android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/corkscrew_button"
-        android:text="@string/corkscrew"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ToggleButton
-        android:id="@+id/corkscrew_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cedar_downs_button"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-    
-     <!-- Corkscrew -->
-
-    <TextView
-        android:id="@+id/dodgem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/dodgem_button"
-        android:layout_alignBottom="@+id/dodgem_button"
-        android:layout_below="@+id/corkscrew"
-        android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/dodgem_button"
-        android:text="@string/dodgem"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ToggleButton
-        android:id="@+id/dodgem_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/corkscrew_button"
-        android:layout_alignParentRight="true"
-        android:textOff="No"
-        android:textOn="Yes" />
-    
-    
-    
-
-</RelativeLayout>
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+	    
+	     <!-- Blue Streak -->
+	    <TextView
+	        android:id="@+id/blue_streak"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="13dp"
+	        android:text="@string/blue_streak"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/blue_streak_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Calypso -->
+	    <TextView
+	        android:id="@+id/calypso"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/calypso_button"
+	        android:layout_alignBottom="@+id/calypso_button"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/blue_streak"
+	        android:layout_marginTop="14dp"
+	        android:text="@string/calypso"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+	    <ToggleButton
+	        android:id="@+id/calypso_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/blue_streak_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	
+	    
+	     <!-- Cedar Mine Ride -->
+	    <TextView
+	        android:id="@+id/cedar_mine"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/cedar_mine_button"
+	        android:layout_alignBottom="@+id/cedar_mine_button"
+	        android:layout_below="@+id/calypso"
+	        android:layout_marginTop="14dp"
+	        android:text="@string/cedar_creek_mine"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/cedar_mine_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/calypso_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    
+	     <!-- Cedar Downs Racing Derby -->
+	
+	    <TextView
+	        android:id="@+id/cedar_downs"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/cedar_downs_button"
+	        android:layout_alignBottom="@+id/cedar_downs_button"
+	        android:layout_below="@+id/cedar_mine"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/cedar_downs_button"
+	        android:text="@string/cedar_downs"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/cedar_downs_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/cedar_mine_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Corkscrew -->
+	
+	    <TextView
+	        android:id="@+id/corkscrew"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/corkscrew_button"
+	        android:layout_alignBottom="@+id/corkscrew_button"
+	        android:layout_below="@+id/cedar_downs"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/corkscrew_button"
+	        android:text="@string/corkscrew"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/corkscrew_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/cedar_downs_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	     <!-- Dodgem -->
+	
+	    <TextView
+	        android:id="@+id/dodgem"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/dodgem_button"
+	        android:layout_alignBottom="@+id/dodgem_button"
+	        android:layout_below="@+id/corkscrew"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/dodgem_button"
+	        android:text="@string/dodgem"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/dodgem_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/corkscrew_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Gemini -->
+	
+	    <TextView
+	        android:id="@+id/gemini"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/gemini_button"
+	        android:layout_alignBottom="@+id/gemini_button"
+	        android:layout_below="@+id/dodgem"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/gemini_button"
+	        android:text="@string/gemini"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/gemini_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/dodgem_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Iron Dragon -->
+	
+	    <TextView
+	        android:id="@+id/iron_dragon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/iron_dragon_button"
+	        android:layout_alignBottom="@+id/iron_dragon_button"
+	        android:layout_below="@+id/gemini"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/iron_dragon_button"
+	        android:text="@string/iron_dragon"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/iron_dragon_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/gemini_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Jr. Gemini -->
+	
+	    <TextView
+	        android:id="@+id/junior_gemini"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/junior_gemini_button"
+	        android:layout_alignBottom="@+id/junior_gemini_button"
+	        android:layout_below="@+id/iron_dragon"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/junior_gemini_button"
+	        android:text="@string/junior_gemini"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/junior_gemini_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/iron_dragon_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    
+	    <!-- Magnum -->
+	
+	    <TextView
+	        android:id="@+id/magnum_xl200"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/magnum_xl200_button"
+	        android:layout_below="@+id/junior_gemini"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/magnum_xl200_button"
+	        android:text="@string/magnum_xl200"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/magnum_xl200_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/junior_gemini_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Mantis -->
+	
+	    <TextView
+	        android:id="@+id/mantis"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/mantis_button"
+	        android:layout_below="@+id/magnum_xl200"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/mantis_button"
+	        android:text="@string/mantis"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/mantis_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/magnum_xl200_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    
+	    <!-- Matterhorn -->
+	
+	    <TextView
+	        android:id="@+id/matterhorn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/matterhorn_button"
+	        android:layout_below="@+id/mantis"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/matterhorn_button"
+	        android:text="@string/matterhorn"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/matterhorn_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/mantis_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Maverick -->
+	
+	    <TextView
+	        android:id="@+id/maverick"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/maverick_button"
+	        android:layout_below="@+id/matterhorn"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/maverick_button"
+	        android:text="@string/maverick"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/maverick_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/matterhorn_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    
+	    <!-- MaXair -->
+	
+	    <TextView
+	        android:id="@+id/maxair"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/maxair_button"
+	        android:layout_below="@+id/maverick"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/maxair_button"
+	        android:text="@string/maxair"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/maxair_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/maverick_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	    
+	    <!-- Mean Streak -->
+	
+	    <TextView
+	        android:id="@+id/mean_streak"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignTop="@+id/mean_streak_button"
+	        android:layout_below="@+id/maxair"
+	        android:layout_marginTop="14dp"
+	        android:layout_toLeftOf="@+id/mean_streak_button"
+	        android:text="@string/mean_streak"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ToggleButton
+	        android:id="@+id/mean_streak_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/maxair_button"
+	        android:layout_alignParentRight="true"
+	        android:textOff="No"
+	        android:textOn="Yes" />
+	
+	</RelativeLayout>
+	
+	
+</ScrollView>
