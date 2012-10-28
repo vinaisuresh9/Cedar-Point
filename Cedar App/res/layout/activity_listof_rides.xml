@@ -17,15 +17,17 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
 	        android:layout_alignParentTop="true"
+	        android:onClick="awesome"
 	        android:textColor="@color/white"
 	        android:text="@string/blue_streak"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/blue_streak_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
+	        android:onClick="ToggleRideStates"
 	        android:layout_alignParentRight="true"
 	        android:textOff="No"
 	        android:textOn="Yes" />
@@ -43,7 +45,7 @@
 	        android:text="@string/calypso"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/calypso_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -68,7 +70,7 @@
 	        android:text="@string/cedar_creek_mine"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/cedar_mine_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -95,7 +97,7 @@
 	        android:text="@string/cedar_downs"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/cedar_downs_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -121,7 +123,7 @@
 	        android:text="@string/corkscrew"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/corkscrew_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -147,7 +149,7 @@
 	        android:text="@string/dodgem"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/dodgem_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -173,7 +175,7 @@
 	        android:text="@string/gemini"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/gemini_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -199,7 +201,7 @@
 	        android:text="@string/iron_dragon"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/iron_dragon_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -225,7 +227,7 @@
 	        android:text="@string/junior_gemini"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/junior_gemini_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -251,7 +253,7 @@
 	        android:text="@string/magnum_xl200"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/magnum_xl200_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -276,7 +278,7 @@
 	        android:text="@string/mantis"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/mantis_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -302,7 +304,7 @@
 	        android:text="@string/matterhorn"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/matterhorn_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -327,7 +329,7 @@
 	        android:text="@string/maverick"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/maverick_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -353,7 +355,7 @@
 	        android:text="@string/maxair"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/maxair_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -378,7 +380,7 @@
 	        android:text="@string/mean_streak"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/mean_streak_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -403,7 +405,7 @@
 	        android:text="@string/millenium_force"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/millenium_force_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -428,7 +430,7 @@
 	        android:text="@string/monster"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/monster_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -454,7 +456,7 @@
 	        android:text="@string/ocean_motion"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/ocean_motion_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -479,7 +481,7 @@
 	        android:text="@string/power_tower"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/power_tower_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -505,7 +507,7 @@
 	        android:text="@string/raptor"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/raptor_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -530,7 +532,7 @@
 	        android:text="@string/scrambler"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/scrambler_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -540,6 +542,31 @@
 	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />	    
+	        
+	    <!-- Shoot the Rapids -->
+	
+	    <TextView
+	        android:id="@+id/shoot_the_rapids"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:textColor="@color/white"
+	        android:layout_alignTop="@+id/shoot_the_rapids_button"
+	        android:layout_below="@+id/scrambler"
+	        android:layout_toLeftOf="@+id/shoot_the_rapids_button"
+	        android:text="@string/shoot_the_rapids"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <CheckBox
+	        android:id="@+id/shoot_the_rapids_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/white"
+	        android:layout_below="@+id/scrambler_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	 
 	        
 	    
 	    <!-- Skyhawk -->
@@ -551,21 +578,47 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/skyhawk_button"
-	        android:layout_below="@+id/scrambler"
+	        android:layout_below="@+id/shoot_the_rapids"
 	        android:layout_toLeftOf="@+id/skyhawk_button"
 	        android:text="@string/skyhawk"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/skyhawk_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/scrambler_button"
+	        android:layout_below="@+id/shoot_the_rapids_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:textOff="No"
 	        android:textOn="Yes" />	 
+	        
+	    
+	    <!-- Snake River Falls -->
+	
+	    <TextView
+	        android:id="@+id/snake_river_falls"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:textColor="@color/white"
+	        android:layout_alignTop="@+id/snake_river_falls_button"
+	        android:layout_below="@+id/skyhawk"
+	        android:layout_toLeftOf="@+id/snake_river_falls_button"
+	        android:text="@string/snake_river_falls"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <CheckBox
+	        android:id="@+id/snake_river_falls_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/white"
+	        android:layout_below="@+id/skyhawk_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	
 	    
 	    
 	     <!-- Super Himalaya -->
@@ -577,17 +630,43 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/super_himalaya_button"
-	        android:layout_below="@+id/skyhawk"
+	        android:layout_below="@+id/snake_river_falls"
 	        android:layout_toLeftOf="@+id/super_himalaya_button"
 	        android:text="@string/super_himalaya"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/super_himalaya_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/skyhawk_button"
+	        android:layout_below="@+id/snake_river_falls_button"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="15dp"
+	        android:textOff="No"
+	        android:textOn="Yes" />	 
+	        
+	    
+	    <!-- Super Himalaya -->
+	
+	    <TextView
+	        android:id="@+id/thunder_canyon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:textColor="@color/white"
+	        android:layout_alignTop="@+id/thunder_canyon_button"
+	        android:layout_below="@+id/super_himalaya"
+	        android:layout_toLeftOf="@+id/thunder_canyon_button"
+	        android:text="@string/thunder_canyon"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <CheckBox
+	        android:id="@+id/thunder_canyon_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/white"
+	        android:layout_below="@+id/super_himalaya_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:textOff="No"
@@ -603,17 +682,17 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/top_thrill_button"
-	        android:layout_below="@+id/super_himalaya"
+	        android:layout_below="@+id/thunder_canyon"
 	        android:layout_toLeftOf="@+id/top_thrill_button"
 	        android:text="@string/top_thrill"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/top_thrill_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/super_himalaya_button"
+	        android:layout_below="@+id/thunder_canyon_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:textOff="No"
@@ -633,7 +712,7 @@
 	        android:text="@string/troika"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/troika_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -659,7 +738,7 @@
 	        android:text="@string/wave_swinger"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/wave_swinger_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -684,7 +763,7 @@
 	        android:text="@string/wicked_twister"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/wicked_twister_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -710,7 +789,7 @@
 	        android:text="@string/wind_seeker"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/wind_seeker_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -736,7 +815,7 @@
 	        android:text="@string/witches_wheel"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/witches_wheel_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -761,7 +840,7 @@
 	        android:text="@string/woodstock_express"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
-	    <ToggleButton
+	    <CheckBox
 	        android:id="@+id/woodstock_express_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"

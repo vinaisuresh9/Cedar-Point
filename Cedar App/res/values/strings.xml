@@ -36,5 +36,8 @@
     <string name="woodstock_express">Woodstock Express</string>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <string name="shoot_the_rapids">Shoot the Rapids</string>
+    <string name="snake_river_falls">Snake River Falls</string>
+    <string name="thunder_canyon">Thunder Canyon</string>
 
 </resources>
