@@ -42,5 +42,6 @@
     <string name="thunder_canyon">Thunder Canyon</string>
     <string name="button_map">View Map</string>
     <string name="title_activity_display_map">Map</string>
+    <string name="map_description">Map of Cedar Point</string>
 
 </resources>
