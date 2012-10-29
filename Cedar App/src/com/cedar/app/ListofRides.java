@@ -1,11 +1,11 @@
 package com.cedar.app;
 
 import java.util.*;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.*;
 import android.widget.*;
+import android.content.*;
 
 public class ListofRides extends Activity {
 	
@@ -368,11 +368,12 @@ public class ListofRides extends Activity {
     	 
     	 }
     	 
-    	 for(String s : ridesList)
-    	 {
-    		 System.out.println(s);
-    		 
-    	 }
     }
     
+    public void ViewMap(View view)
+    {
+    	Intent intent = new Intent(this, DisplayMap.class);
+    	startActivity(intent);
+    	
+    }
 }

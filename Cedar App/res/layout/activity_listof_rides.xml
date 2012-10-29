@@ -883,6 +883,15 @@
 	        android:textOn="Yes" />	
 	        
 	    
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_map"
+	        android:layout_below="@+id/woodstock_express"
+	        android:layout_marginTop="15dp"
+	        android:onClick="ViewMap"
+	        android:textColor="@color/white"/>
+	    
 	</RelativeLayout>
 	
 	
