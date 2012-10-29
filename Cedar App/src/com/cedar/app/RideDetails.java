@@ -59,7 +59,8 @@ public class RideDetails extends Activity {
     		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT,
                     RelativeLayout.LayoutParams.WRAP_CONTENT);
-    		lp.addRule(RelativeLayout.ALIGN_BOTTOM);
+    		lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+    		lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
     		tv.setLayoutParams(lp);
     		tv.setTextColor(getResources().getColor(R.color.white));
     		tv.setText("Duration: 	1 min, 45 sec\n" +
@@ -75,10 +76,8 @@ public class RideDetails extends Activity {
     		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
     		image.setLayoutParams(l);
     		image.setImageResource(R.drawable.bluestreak_thumb);
-    		image.setX(356);
-    		image.setY(252);
     		//layout.setBackgroundResource(R.drawable.bluestreak_thumb);
-    		//layout.addView(image);
+    		layout.addView(image);
     		
     		break;
     	}
