@@ -43,5 +43,7 @@
     <string name="button_map">View Map</string>
     <string name="title_activity_display_map">Map</string>
     <string name="map_description">Map of Cedar Point</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_ride_details">Ride Details</string>
 
 </resources>

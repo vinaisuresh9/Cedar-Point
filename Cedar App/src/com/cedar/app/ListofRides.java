@@ -7,15 +7,19 @@ import android.view.*;
 import android.widget.*;
 import android.content.*;
 
-public class ListofRides extends Activity {
+public class ListofRides extends Activity implements View.OnClickListener {
 	
 	public List<String> ridesList;
+	public final static String RIDE = "com.cedar.ride";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listof_rides);
         ridesList = new LinkedList<String>();
+        
+        TextView tv1 = (TextView) findViewById(R.id.blue_streak);
+        tv1.setOnClickListener(this);
     }
 
     @Override
@@ -376,4 +380,19 @@ public class ListofRides extends Activity {
     	startActivity(intent);
     	
     }
+
+    public void onClick(View view)
+    {
+    	Intent intent = new Intent(this, RideDetails.class);
+    	
+   	 switch (view.getId())
+   	 {
+   	 case R.id.blue_streak:
+   		 intent.putExtra(RIDE, R.string.blue_streak);
+   		 startActivity(intent);
+   		 break;
+    	
+   	 }
+    }
+
 }

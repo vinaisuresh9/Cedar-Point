@@ -27,6 +27,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cedar.app.ListofRides" />
         </activity>
+        <activity
+            android:name=".RideDetails"
+            android:label="@string/title_activity_ride_details" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cedar.app.ListofRides" />
+        </activity>
     </application>
 
 </manifest>
