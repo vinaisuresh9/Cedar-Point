@@ -17,6 +17,8 @@ public class ListofRides extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listof_rides);
         
+        ridesList = new LinkedList<String>();
+        
         TextView tv1 = (TextView) findViewById(R.id.blue_streak);
         tv1.setOnClickListener(this);
     }
