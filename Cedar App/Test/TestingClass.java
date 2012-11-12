@@ -1,15 +1,18 @@
 package com.cedar.app;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 import java.lang.*;
 
-import org.junit.Test;
 
 
 public class TestingClass {
 
 	@Test
 	public void testAddtoList() {
+		ListofRides rides = new ListofRides();
+		
+		
 		fail("Not yet implemented");
 	}
 

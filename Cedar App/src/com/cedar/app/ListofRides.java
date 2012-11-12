@@ -16,7 +16,6 @@ public class ListofRides extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listof_rides);
-        ridesList = new LinkedList<String>();
         
         TextView tv1 = (TextView) findViewById(R.id.blue_streak);
         tv1.setOnClickListener(this);
@@ -34,6 +33,7 @@ public class ListofRides extends Activity implements View.OnClickListener {
      */
     public void AddtoList (View view)
     {
+        ridesList = new LinkedList<String>();
     	final CheckBox check = (CheckBox)view;
     	
     	 switch (check.getId())
