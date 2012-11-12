@@ -27,7 +27,6 @@ public class RideDetails extends Activity {
         setContentView(layout);
         
         
-        
         Intent intent = getIntent();
         int message = intent.getIntExtra(ListofRides.RIDE, 0);
         DetailsforRide(message);
