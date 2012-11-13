@@ -7,7 +7,7 @@ import android.view.*;
 import android.widget.*;
 import android.content.*;
 
-public class ListofRides extends Activity implements View.OnClickListener {
+public class ListofRides extends Activity  {
 	
 	public List<String> ridesList;
 	public final static String RIDE = "com.cedar.ride";
@@ -19,8 +19,6 @@ public class ListofRides extends Activity implements View.OnClickListener {
         
         ridesList = new LinkedList<String>();
         
-        TextView tv1 = (TextView) findViewById(R.id.blue_streak);
-        tv1.setOnClickListener(this);
     }
 
     @Override
@@ -383,7 +381,8 @@ public class ListofRides extends Activity implements View.OnClickListener {
     	
     }
 
-    public void onClick(View view)
+    //Function to allow details for each ride to show up when clicked
+    public void RideDetails(View view)
     {
     	Intent intent = new Intent(this, RideDetails.class);
     	
@@ -393,6 +392,58 @@ public class ListofRides extends Activity implements View.OnClickListener {
    		 intent.putExtra(RIDE, R.string.blue_streak);
    		 startActivity(intent);
    		 break;
+   	case R.id.calypso:
+  		 intent.putExtra(RIDE, R.string.calypso);
+  		 startActivity(intent);
+  		 break;
+   	case R.id.cedar_downs:
+  		 intent.putExtra(RIDE, R.string.cedar_downs);
+  		 startActivity(intent);
+  		 break;
+   	case R.id.cedar_mine:
+ 		 intent.putExtra(RIDE, R.string.cedar_creek_mine);
+ 		 startActivity(intent);
+ 		 break;
+   	case R.id.corkscrew:
+ 		 intent.putExtra(RIDE, R.string.corkscrew);
+ 		 startActivity(intent);
+ 		 break;
+   	case R.id.dodgem:
+ 		 intent.putExtra(RIDE, R.string.dodgem);
+ 		 startActivity(intent);
+ 		 break;
+   	case R.id.gemini:
+		 intent.putExtra(RIDE, R.string.gemini);
+		 startActivity(intent);
+		 break;
+   	case R.id.iron_dragon:
+		 intent.putExtra(RIDE, R.string.iron_dragon);
+		 startActivity(intent);
+		 break;
+   	case R.id.junior_gemini:
+		 intent.putExtra(RIDE, R.string.junior_gemini);
+		 startActivity(intent);
+		 break;
+   	case R.id.magnum_xl200:
+		 intent.putExtra(RIDE, R.string.magnum_xl200);
+		 startActivity(intent);
+		 break;
+  	case R.id.mantis:
+		 intent.putExtra(RIDE, R.string.mantis);
+		 startActivity(intent);
+		 break;
+  	case R.id.matterhorn:
+		 intent.putExtra(RIDE, R.string.matterhorn);
+		 startActivity(intent);
+		 break;
+  	case R.id.maverick:
+		 intent.putExtra(RIDE, R.string.maverick);
+		 startActivity(intent);
+		 break;
+  	case R.id.maxair:
+		 intent.putExtra(RIDE, R.string.maxair);
+		 startActivity(intent);
+		 break;
     	
    	 }
     }

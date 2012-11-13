@@ -19,6 +19,8 @@
 	        android:layout_alignParentTop="true"
 	        android:textColor="@color/white"
 	        android:text="@string/blue_streak"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -42,6 +44,8 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_below="@+id/blue_streak"
 	        android:text="@string/calypso"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
 	    <CheckBox
@@ -68,6 +72,8 @@
 	        android:layout_alignBottom="@+id/cedar_mine_button"
 	        android:layout_below="@+id/calypso"
 	        android:text="@string/cedar_creek_mine"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -96,6 +102,8 @@
 	        android:layout_below="@+id/cedar_mine"
 	        android:layout_toLeftOf="@+id/cedar_downs_button"
 	        android:text="@string/cedar_downs"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -123,6 +131,8 @@
 	        android:layout_below="@+id/cedar_downs"
 	        android:layout_toLeftOf="@+id/corkscrew_button"
 	        android:text="@string/corkscrew"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -150,6 +160,8 @@
 	        android:layout_below="@+id/corkscrew"
 	        android:layout_toLeftOf="@+id/dodgem_button"
 	        android:text="@string/dodgem"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -177,6 +189,8 @@
 	        android:layout_below="@+id/dodgem"
 	        android:layout_toLeftOf="@+id/gemini_button"
 	        android:text="@string/gemini"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -204,6 +218,8 @@
 	        android:layout_below="@+id/gemini"
 	        android:layout_toLeftOf="@+id/iron_dragon_button"
 	        android:text="@string/iron_dragon"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -231,6 +247,8 @@
 	        android:layout_below="@+id/iron_dragon"
 	        android:layout_toLeftOf="@+id/junior_gemini_button"
 	        android:text="@string/junior_gemini"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -258,6 +276,8 @@
 	        android:layout_below="@+id/junior_gemini"
 	        android:layout_toLeftOf="@+id/magnum_xl200_button"
 	        android:text="@string/magnum_xl200"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -284,6 +304,8 @@
 	        android:layout_below="@+id/magnum_xl200"
 	        android:layout_toLeftOf="@+id/mantis_button"
 	        android:text="@string/mantis"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -311,6 +333,8 @@
 	        android:layout_below="@+id/mantis"
 	        android:layout_toLeftOf="@+id/matterhorn_button"
 	        android:text="@string/matterhorn"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -337,6 +361,8 @@
 	        android:layout_below="@+id/matterhorn"
 	        android:layout_toLeftOf="@+id/maverick_button"
 	        android:text="@string/maverick"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -364,6 +390,8 @@
 	        android:layout_below="@+id/maverick"
 	        android:layout_toLeftOf="@+id/maxair_button"
 	        android:text="@string/maxair"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -390,6 +418,8 @@
 	        android:layout_below="@+id/maxair"
 	        android:layout_toLeftOf="@+id/mean_streak_button"
 	        android:text="@string/mean_streak"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -416,6 +446,8 @@
 	        android:layout_below="@+id/mean_streak"
 	        android:layout_toLeftOf="@+id/millenium_force_button"
 	        android:text="@string/millenium_force"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -442,6 +474,8 @@
 	        android:layout_below="@+id/millenium_force"
 	        android:layout_toLeftOf="@+id/monster_button"
 	        android:text="@string/monster"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -469,6 +503,8 @@
 	        android:layout_below="@+id/monster"
 	        android:layout_toLeftOf="@+id/ocean_motion_button"
 	        android:text="@string/ocean_motion"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -495,6 +531,8 @@
 	        android:layout_below="@+id/ocean_motion"
 	        android:layout_toLeftOf="@+id/power_tower_button"
 	        android:text="@string/power_tower"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -522,6 +560,8 @@
 	        android:layout_below="@+id/power_tower"
 	        android:layout_toLeftOf="@+id/raptor_button"
 	        android:text="@string/raptor"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -548,6 +588,8 @@
 	        android:layout_below="@+id/raptor"
 	        android:layout_toLeftOf="@+id/scrambler_button"
 	        android:text="@string/scrambler"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -574,6 +616,8 @@
 	        android:layout_below="@+id/scrambler"
 	        android:layout_toLeftOf="@+id/shoot_the_rapids_button"
 	        android:text="@string/shoot_the_rapids"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -601,6 +645,8 @@
 	        android:layout_below="@+id/shoot_the_rapids"
 	        android:layout_toLeftOf="@+id/skyhawk_button"
 	        android:text="@string/skyhawk"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -628,6 +674,8 @@
 	        android:layout_below="@+id/skyhawk"
 	        android:layout_toLeftOf="@+id/snake_river_falls_button"
 	        android:text="@string/snake_river_falls"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -655,6 +703,8 @@
 	        android:layout_below="@+id/snake_river_falls"
 	        android:layout_toLeftOf="@+id/super_himalaya_button"
 	        android:text="@string/super_himalaya"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -682,6 +732,8 @@
 	        android:layout_below="@+id/super_himalaya"
 	        android:layout_toLeftOf="@+id/thunder_canyon_button"
 	        android:text="@string/thunder_canyon"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -709,6 +761,8 @@
 	        android:layout_below="@+id/thunder_canyon"
 	        android:layout_toLeftOf="@+id/top_thrill_button"
 	        android:text="@string/top_thrill"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -735,6 +789,8 @@
 	        android:layout_below="@+id/top_thrill"
 	        android:layout_toLeftOf="@+id/troika_button"
 	        android:text="@string/troika"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -762,6 +818,8 @@
 	        android:layout_below="@+id/troika"
 	        android:layout_toLeftOf="@+id/wave_swinger_button"
 	        android:text="@string/wave_swinger"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -788,6 +846,8 @@
 	        android:layout_below="@+id/wave_swinger"
 	        android:layout_toLeftOf="@+id/wicked_twister_button"
 	        android:text="@string/wicked_twister"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -815,6 +875,8 @@
 	        android:layout_below="@+id/wicked_twister"
 	        android:layout_toLeftOf="@+id/wind_seeker_button"
 	        android:text="@string/wind_seeker"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -842,6 +904,8 @@
 	        android:layout_below="@+id/wind_seeker"
 	        android:layout_toLeftOf="@+id/witches_wheel_button"
 	        android:text="@string/witches_wheel"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
@@ -868,6 +932,8 @@
 	        android:layout_below="@+id/witches_wheel"
 	        android:layout_toLeftOf="@+id/woodstock_express_button"
 	        android:text="@string/woodstock_express"
+	        android:clickable="true"
+	        android:onClick="RideDetails"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	    <CheckBox
