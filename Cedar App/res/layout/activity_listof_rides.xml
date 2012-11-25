@@ -604,35 +604,6 @@
 	        android:textOff="No"
 	        android:textOn="Yes" />	    
 	        
-	    <!-- Shoot the Rapids -->
-	
-	    <TextView
-	        android:id="@+id/shoot_the_rapids"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:textColor="@color/white"
-	        android:layout_alignTop="@+id/shoot_the_rapids_button"
-	        android:layout_below="@+id/scrambler"
-	        android:layout_toLeftOf="@+id/shoot_the_rapids_button"
-	        android:text="@string/shoot_the_rapids"
-	        android:clickable="true"
-	        android:onClick="RideDetails"
-	        android:textAppearance="?android:attr/textAppearanceLarge" />
-	
-	    <CheckBox
-	        android:id="@+id/shoot_the_rapids_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textColor="@color/white"
-	        android:layout_below="@+id/scrambler_button"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginTop="15dp"
-	        android:onClick="AddtoList"
-	        android:textOff="No"
-	        android:textOn="Yes" />	 
-	        
-	    
 	    <!-- Skyhawk -->
 	
 	    <TextView
@@ -642,7 +613,7 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/skyhawk_button"
-	        android:layout_below="@+id/shoot_the_rapids"
+	        android:layout_below="@+id/scrambler"
 	        android:layout_toLeftOf="@+id/skyhawk_button"
 	        android:text="@string/skyhawk"
 	        android:clickable="true"
@@ -654,7 +625,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/shoot_the_rapids_button"
+	        android:layout_below="@+id/scrambler_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:onClick="AddtoList"

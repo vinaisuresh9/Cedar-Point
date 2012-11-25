@@ -249,16 +249,6 @@ public class ListofRides extends Activity  {
     			 ridesList.remove(this.getString(R.string.scrambler));
     		 }
     		 break;
-    	 case R.id.shoot_the_rapids_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.shoot_the_rapids));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.shoot_the_rapids));
-    		 }
-    		 break;
     	 case R.id.skyhawk_button:
     		 if (check.isChecked())
     		 {
@@ -444,6 +434,79 @@ public class ListofRides extends Activity  {
 		 intent.putExtra(RIDE, R.string.maxair);
 		 startActivity(intent);
 		 break;
+  	case R.id.mean_streak:
+		 intent.putExtra(RIDE, R.string.mean_streak);
+		 startActivity(intent);
+		 break;
+ 	case R.id.millenium_force:
+		 intent.putExtra(RIDE, R.string.millenium_force);
+		 startActivity(intent);
+		 break;
+ 	case R.id.monster:
+		 intent.putExtra(RIDE, R.string.monster);
+		 startActivity(intent);
+		 break;
+ 	case R.id.ocean_motion:
+		 intent.putExtra(RIDE, R.string.ocean_motion);
+		 startActivity(intent);
+		 break;
+	case R.id.power_tower:
+		 intent.putExtra(RIDE, R.string.power_tower);
+		 startActivity(intent);
+		 break;
+	case R.id.raptor:
+		 intent.putExtra(RIDE, R.string.raptor);
+		 startActivity(intent);
+		 break;
+	case R.id.scrambler:
+		 intent.putExtra(RIDE, R.string.scrambler);
+		 startActivity(intent);
+		 break;
+	case R.id.skyhawk:
+		 intent.putExtra(RIDE, R.string.skyhawk);
+		 startActivity(intent);
+		 break;
+	case R.id.snake_river_falls:
+		 intent.putExtra(RIDE, R.string.snake_river_falls);
+		 startActivity(intent);
+		 break;
+	case R.id.super_himalaya:
+		 intent.putExtra(RIDE, R.string.super_himalaya);
+		 startActivity(intent);
+		 break;
+	case R.id.thunder_canyon:
+		 intent.putExtra(RIDE, R.string.thunder_canyon);
+		 startActivity(intent);
+		 break;
+	case R.id.top_thrill:
+		 intent.putExtra(RIDE, R.string.top_thrill);
+		 startActivity(intent);
+		 break;
+	case R.id.troika:
+		 intent.putExtra(RIDE, R.string.troika);
+		 startActivity(intent);
+		 break;
+	case R.id.wave_swinger:
+		 intent.putExtra(RIDE, R.string.wave_swinger);
+		 startActivity(intent);
+		 break;
+	case R.id.wicked_twister:
+		 intent.putExtra(RIDE, R.string.wicked_twister);
+		 startActivity(intent);
+		 break;
+	case R.id.wind_seeker:
+		 intent.putExtra(RIDE, R.string.wind_seeker);
+		 startActivity(intent);
+		 break;
+	case R.id.witches_wheel:
+		 intent.putExtra(RIDE, R.string.witches_wheel);
+		 startActivity(intent);
+		 break;
+	case R.id.woodstock_express:
+		 intent.putExtra(RIDE, R.string.woodstock_express);
+		 startActivity(intent);
+		 break;
+		 
     	
    	 }
     }

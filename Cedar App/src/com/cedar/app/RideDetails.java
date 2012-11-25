@@ -242,7 +242,199 @@ public class RideDetails extends Activity {
 			
 			break;
 			
+	    case R.string.mean_streak:
+	    	duration = "2 min, 45 sec\n";
+    		heightreq = "48\"\n";
+    		speed = "65 mph\n";
+    		description = "Quite possibly the most wood you’ll ever see in one place, the Mean Streak is 1.7 million board feet of southern yellow pine with an attitude. It’s beautiful to look at, but climb aboard and other words soon come to mind as you rocket through the hills and turns, in and out of the structure itself. This world-record breaker is everything you love about wooden coasters, just a lot more of it.\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
 			
+			imageView = CreateImageView(R.drawable.mean_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.millenium_force:
+	    	duration = "2 min, 0 sec\n";
+    		heightreq = "48\"\n";
+    		speed = "93 mph\n";
+    		description = "It’s the big star of the show. A true Giant among coasters. So huge, it created a whole new category – the giga-coaster. Welcome to Millennium Force, the 310 foot, 93 MPH record-breaking monster of a thrill ride. The first hill features an elevator cable lift system to get you to the top faster, then it’s an 80-degree drop to start the coaster ride of your life!\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.milli_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.monster:
+			heightreq = "46\"\n";
+			description = "A many-tentacled creature has you in its grip. Ride the disorienting Monster and you’ll be spun, turned, lifted and lowered – all at the same time! \n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.monster_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.ocean_motion:
+			heightreq = "39\"\n";
+			description = "Ships are made to sail, and this one REALLY does its job. The Ocean Motion ship swings back and forth, higher and higher, until it reaches 65 feet.\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.oceanmotion_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.power_tower:
+			heightreq = "52\"\n";
+			description = " It’s 300 feet of steel rising into the sky, and a choice: you can rocket 240 feet up to the top at incredible speed, or you can start at the top and thrust downward faster than a free fall. Two towers rocket up, and two towers thrust down. Well, what’s it gonna be?\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.oceanmotion_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.raptor:
+	    	duration = "2 min, 0 sec\n";
+    		heightreq = "54\"\n";
+    		speed = "57 mph\n";
+    		description = "Get ready to catch some big air: when you ride Raptor the only thing under your feet is sky. You really will feel snatched up by a bird of prey as the Raptor takes you wherever it pleases, turning you upside down six different times before returning you safely to solid ground. It all starts when you hear, \"There goes the floor, you're out the door - enjoy your ride on Raptor!\"\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.raptor_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.scrambler:
+			heightreq = "52\"\n";
+			description = " It’s 300 feet of steel rising into the sky, and a choice: you can rocket 240 feet up to the top at incredible speed, or you can start at the top and thrust downward faster than a free fall. Two towers rocket up, and two towers thrust down. Well, what’s it gonna be?\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.oceanmotion_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.skyhawk:
+			heightreq = "48\"\n";
+			description = "We’ve got a swing set. And it’s waaaaaay bigger than yours. In fact, the Skyhawk is the world’s tallest swing ride at 125 feet. Two giant arms, each holding 20 riders, swing in a 60 mph scissor motion, reaching high into the deep blue sky.\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.skyhawk_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.super_himalaya:
+			heightreq = "52\"\n";
+			description = "Who knew something like centrifugal force could squeeze out so many laughs! The Super Himalaya takes you and your seatmates around and around, up and down and by the end everyone’s happily squeezed together.\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.super_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.top_thrill:
+	    	duration = "0 min, 17 sec\n";
+    		heightreq = "52\"\n";
+    		speed = "120 mph\n";
+    		description = "Zero to 120 MPH in less than 4 seconds. A few seconds later, you’re 420 feet in the air. In the race for pure adrenaline thrills, there is one winner: Top Thrill Dragster. Nothing else compares to this high-horsepower shot into the sky. From a standing start you’re launched forward, then straight up, then straight down and back to the finish line. The ride may be over in 17 seconds, but it’ll stay with you forever.\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.ttd_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.troika:
+			heightreq = "42\"\n";
+			description = "For people who want more scramble than even the Scrambler: Troika. Rising 25 feet off the ground with a swinging scramble, the Troika is fun to the power of three!\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.troika_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.wave_swinger:
+			heightreq = "48\"\n";
+			description = " This classic midway ride is as beautiful to look at as it is to ride. Swing around and around, rising 16 feet in the air as the tower reaches its full height.\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.waveswinger_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.wicked_twister:
+	    	duration = "0 min, 40 sec\n";
+    		heightreq = "52\"\n";
+    		speed = "72 mph\n";
+    		description = "Just steps from the Cedar Point Beach you can launch yourself into a spiraling scream-fest on the Wicked Twister. It’s not just a coaster, it’s a double-twisting impulse coaster. One of the tallest--and fastest--in the world. You’ll be rocked, rolled and launched into two 450-degree spirals at each end of the tracks. You will be twisted. Wickedly. What are you waiting for?\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.wicked_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.wind_seeker:
+			heightreq = "52\"\n";
+			description = "How would you like to swing in a chair that rises higher than Magnum? You can. Just grab a seat on WindSeeker and it’ll take you 301 feet into the sky with NOTHING below your chair but air!\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.ws_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.witches_wheel:
+			heightreq = "54\"\n";
+			description = "It looks innocent enough. But step into one of its unique tandem-style cars and things change. First you spin. Faster and faster until the whole ride tips up and suddenly you’re going up and down and upside down, snug in your seat thanks to all the positive g-forces.\n";
+			textView = this.CreateTextView(heightreq, description);
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.witches_thumb);
+			layout.addView(imageView);
+			
+			break;
+			
+	    case R.string.woodstock_express:
+	    	duration = "1 min, 40 sec\n";
+    		heightreq = "48\"\n";
+    		speed = "25 mph\n";
+    		description = "Looking for some thrills in Camp Snoopy? It’s time to board the Woodstock Express. The perfect size for parents and kids to ride together, this junior coaster takes you on a zippy ride through hills, turns, and curves. And giggles.\n";
+    		textView = this.CreateTextView(duration, heightreq, speed, description);
+    		
+			layout.addView(textView);
+			
+			imageView = CreateImageView(R.drawable.woodstock_thumb);
+			layout.addView(imageView);
+			
+			break;
 			
 			
 			
