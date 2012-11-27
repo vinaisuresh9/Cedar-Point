@@ -33,7 +33,7 @@ public class ListofRides extends Activity  {
      */
     public void AddtoList (View view)
     {
-        ridesList = new LinkedList<String>();
+
     	final CheckBox check = (CheckBox)view;
     	
     	 switch (check.getId())

@@ -32,8 +32,37 @@ public class ListofRidesTEST extends
 	{
 		check = (CheckBox) LOR.findViewById(R.id.blue_streak_button);
 		TouchUtils.clickView(this, check);
-		System.out.println(check.isChecked());
-		this.assertEquals(check.isChecked(), true);
+		assertEquals(check.isChecked(), true);
+		
+	}
+	
+	
+	public void testListRemains()
+	{
+		CheckBox[] checks = new CheckBox[5];
+		checks[0] = (CheckBox) LOR.findViewById(R.id.cedar_downs_button);
+		checks[1] = (CheckBox) LOR.findViewById(R.id.dodgem_button);
+		checks[2] = (CheckBox) LOR.findViewById(R.id.calypso_button);
+		checks[3] = (CheckBox) LOR.findViewById(R.id.corkscrew_button);
+		checks[4] = (CheckBox) LOR.findViewById(R.id.gemini_button);
+		
+		for (CheckBox c : checks)
+		{
+			TouchUtils.clickView(this, c);
+			
+		}
+		
+		System.out.println(LOR.ridesList.size());
+		
+			
+		
+		/*assertTrue(LOR.ridesList.contains(LOR.getString(R.id.cedar_downs)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.dodgem)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.calypso)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.corkscrew)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.gemini)));*/
+		
+		
 		
 	}
 
