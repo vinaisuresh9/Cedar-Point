@@ -1,11 +1,9 @@
 package com.cedar.app.test;
 
-import java.util.*;
 
 import com.cedar.app.ListofRides;
 import com.cedar.app.R;
 
-import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.view.KeyEvent;
@@ -82,13 +80,30 @@ public class ListofRidesTEST extends
 		
 	}
 
+	
 	public void testRideDescriptionViews()
 	{
 		TouchUtils.clickView(this, LOR.findViewById(R.id.blue_streak));
+	
 		
-        
+		sendKeys(KeyEvent.KEYCODE_BACK);
 		
+		TouchUtils.clickView(this, LOR.findViewById(R.id.dodgem));
 		
+		sendKeys(KeyEvent.KEYCODE_BACK);
 		
 	}
+	
+	
+	public static void wait (int n){
+        
+        long t0, t1;
+
+        t0 =  System.currentTimeMillis();
+
+        do{
+            t1 = System.currentTimeMillis();
+        }
+        while (t1 - t0 < n);
+    }
 }
