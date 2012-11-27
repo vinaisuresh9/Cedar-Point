@@ -7,11 +7,11 @@ import com.cedar.app.R;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
+import android.view.KeyEvent;
 import android.widget.*;
 
 public class ListofRidesTEST extends
 		ActivityInstrumentationTestCase2<ListofRides> {
-	public List<String> ridesList;
 	ListofRides LOR;
 	CheckBox check;
 
@@ -24,8 +24,7 @@ public class ListofRidesTEST extends
 		//setActivityInitialTouchMode(false);
 		
 		LOR = getActivity();
-		ridesList = new LinkedList<String>();
-		ridesList = LOR.ridesList;
+
 	}
 	
 	public void testAddtoList()
@@ -37,6 +36,8 @@ public class ListofRidesTEST extends
 	}
 	
 	
+	
+	//Checks to see if List remains even if new Activity is started
 	public void testListRemains()
 	{
 		CheckBox[] checks = new CheckBox[5];
@@ -52,15 +53,26 @@ public class ListofRidesTEST extends
 			
 		}
 		
-		System.out.println(LOR.ridesList.size());
+		//Checks to see if rides were added to the list of rides
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.cedar_downs)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.dodgem)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.calypso)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.corkscrew)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.gemini)));
 		
-			
+		//Move to next Activity, which is a Description of Calypso
+		TouchUtils.clickView(this, LOR.findViewById(R.id.calypso));
 		
-		/*assertTrue(LOR.ridesList.contains(LOR.getString(R.id.cedar_downs)));
-		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.dodgem)));
-		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.calypso)));
-		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.corkscrew)));
-		assertTrue(LOR.ridesList.contains(LOR.getString(R.id.gemini)));*/
+		this.sendKeys(KeyEvent.KEYCODE_BACK);
+		
+		//Checks to see if rides remain in list after a new Activity has been started
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.cedar_downs)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.dodgem)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.calypso)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.corkscrew)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.gemini)));
+		
+
 		
 		
 		
