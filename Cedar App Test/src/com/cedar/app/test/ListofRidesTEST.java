@@ -5,6 +5,7 @@ import java.util.*;
 import com.cedar.app.ListofRides;
 import com.cedar.app.R;
 
+import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.view.KeyEvent;
@@ -39,6 +40,7 @@ public class ListofRidesTEST extends
 	
 	//Checks to see if List remains even if new Activity is started
 	public void testListRemains()
+
 	{
 		CheckBox[] checks = new CheckBox[5];
 		checks[0] = (CheckBox) LOR.findViewById(R.id.cedar_downs_button);
@@ -46,6 +48,8 @@ public class ListofRidesTEST extends
 		checks[2] = (CheckBox) LOR.findViewById(R.id.calypso_button);
 		checks[3] = (CheckBox) LOR.findViewById(R.id.corkscrew_button);
 		checks[4] = (CheckBox) LOR.findViewById(R.id.gemini_button);
+		
+		
 		
 		for (CheckBox c : checks)
 		{
@@ -78,4 +82,13 @@ public class ListofRidesTEST extends
 		
 	}
 
+	public void testRideDescriptionViews()
+	{
+		TouchUtils.clickView(this, LOR.findViewById(R.id.blue_streak));
+		
+        
+		
+		
+		
+	}
 }
