@@ -6,6 +6,7 @@ import com.cedar.app.ListofRides;
 import com.cedar.app.R;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.TouchUtils;
 import android.widget.*;
 
 public class ListofRidesTEST extends
@@ -14,12 +15,14 @@ public class ListofRidesTEST extends
 	ListofRides LOR;
 	CheckBox check;
 
-	public ListofRidesTEST(String name) {
+	public ListofRidesTEST() {
 		super(ListofRides.class);
 	}
 
 	protected void setUp() throws Exception {
 		super.setUp();
+		//setActivityInitialTouchMode(false);
+		
 		LOR = getActivity();
 		ridesList = new LinkedList<String>();
 		ridesList = LOR.ridesList;
@@ -28,7 +31,9 @@ public class ListofRidesTEST extends
 	public void testAddtoList()
 	{
 		check = (CheckBox) LOR.findViewById(R.id.blue_streak_button);
-		check.setChecked(true);
+		TouchUtils.clickView(this, check);
+		System.out.println(check.isChecked());
+		this.assertEquals(check.isChecked(), true);
 		
 	}
 
