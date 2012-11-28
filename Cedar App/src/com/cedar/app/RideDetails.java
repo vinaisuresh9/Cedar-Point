@@ -16,6 +16,8 @@ public class RideDetails extends Activity {
 	String speed;
 	String description;
 	
+	Ride ride;
+	
 	TextView textView;
 	ImageView imageView;
 
