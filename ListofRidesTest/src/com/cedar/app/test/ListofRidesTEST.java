@@ -20,7 +20,7 @@ public class ListofRidesTEST extends
 
 	protected void setUp() throws Exception {
 		super.setUp();
-		//setActivityInitialTouchMode(false);
+		setActivityInitialTouchMode(false);
 		
 		LOR = getActivity();
 
@@ -33,6 +33,73 @@ public class ListofRidesTEST extends
 		assertEquals(check.isChecked(), true);
 		
 	}
+	
+	public void testRideDescriptionViews()
+	{
+		TouchUtils.clickView(this, LOR.findViewById(R.id.blue_streak));
+	
+		
+		sendKeys(KeyEvent.KEYCODE_BACK);
+		
+		TouchUtils.clickView(this, LOR.findViewById(R.id.dodgem));
+		
+		sendKeys(KeyEvent.KEYCODE_BACK);
+		
+	}
+	
+	
+	public void testScrolling()
+	{
+		CheckBox[] checks = new CheckBox[2];
+		checks[0] = (CheckBox) LOR.findViewById(R.id.dodgem_button);
+		checks[1] = (CheckBox) LOR.findViewById(R.id.calypso_button);
+		
+		for (CheckBox c : checks)
+		{
+			TouchUtils.clickView(this, c);	
+		}
+		
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.dodgem)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.calypso)));
+		
+		TouchUtils.dragQuarterScreenUp(this, getActivity());
+		TouchUtils.dragQuarterScreenUp(this, getActivity());
+		TouchUtils.dragQuarterScreenUp(this, getActivity());
+
+		
+		checks[0] = (CheckBox) LOR.findViewById(R.id.witches_wheel_button);
+		checks[1] = (CheckBox) LOR.findViewById(R.id.woodstock_express_button);
+
+		for (CheckBox c : checks)
+		{
+			TouchUtils.clickView(this, c);	
+		}
+		
+		TouchUtils.dragQuarterScreenDown(this, getActivity());
+		TouchUtils.dragQuarterScreenDown(this, getActivity());
+		TouchUtils.dragQuarterScreenDown(this, getActivity());
+
+
+		checks[0] = (CheckBox) LOR.findViewById(R.id.dodgem_button);
+		checks[1] = (CheckBox) LOR.findViewById(R.id.calypso_button);
+		
+		for (CheckBox c : checks)
+		{
+			TouchUtils.clickView(this, c);	
+		}
+		
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.witches_wheel)));
+		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.woodstock_express)));	
+		
+		assertFalse(LOR.ridesList.contains(LOR.getString(R.string.dodgem)));
+		assertFalse(LOR.ridesList.contains(LOR.getString(R.string.calypso)));	
+		
+		assertFalse(((CheckBox) LOR.findViewById(R.id.dodgem_button)).isChecked());
+		assertFalse(((CheckBox) LOR.findViewById(R.id.calypso_button)).isChecked());
+
+		assertTrue(((CheckBox) LOR.findViewById(R.id.witches_wheel_button)).isChecked());
+		assertTrue(((CheckBox) LOR.findViewById(R.id.woodstock_express_button)).isChecked());
+		}
 	
 	
 	
@@ -73,26 +140,12 @@ public class ListofRidesTEST extends
 		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.calypso)));
 		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.corkscrew)));
 		assertTrue(LOR.ridesList.contains(LOR.getString(R.string.gemini)));
-		
 
-		
-		
 		
 	}
 
 	
-	public void testRideDescriptionViews()
-	{
-		TouchUtils.clickView(this, LOR.findViewById(R.id.blue_streak));
 	
-		
-		sendKeys(KeyEvent.KEYCODE_BACK);
-		
-		TouchUtils.clickView(this, LOR.findViewById(R.id.dodgem));
-		
-		sendKeys(KeyEvent.KEYCODE_BACK);
-		
-	}
 	
 	
 	/*public static void wait (int n){
