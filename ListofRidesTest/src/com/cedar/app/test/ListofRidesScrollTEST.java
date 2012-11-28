@@ -20,9 +20,7 @@ public class ListofRidesScrollTEST extends
 	}
 
 	protected void setUp() throws Exception {
-		super.setUp();
-		//setActivityInitialTouchMode(false);
-		
+		super.setUp();		
 		LOR = getActivity();
 		ridesList = new LinkedList<String>();
 		ridesList = LOR.ridesList;
@@ -52,8 +50,6 @@ public class ListofRidesScrollTEST extends
 		
 		TouchUtils.dragQuarterScreenDown(this, getActivity());
 		TouchUtils.dragQuarterScreenDown(this, getActivity());
-		TouchUtils.dragQuarterScreenDown(this, getActivity());
-
 
 		checks[0] = (CheckBox) LOR.findViewById(R.id.dodgem_button);
 		checks[1] = (CheckBox) LOR.findViewById(R.id.calypso_button);
