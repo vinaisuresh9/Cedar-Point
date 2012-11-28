@@ -33,7 +33,7 @@ public class RideDetails extends Activity {
         layout.setBackgroundColor(getResources().getColor(R.color.black));
         setContentView(layout);
         
-        
+        //Get the name of the ride from the Intent
         Intent intent = getIntent();
         int message = intent.getIntExtra(ListofRides.RIDE, 0);
         DetailsforRide(message);
