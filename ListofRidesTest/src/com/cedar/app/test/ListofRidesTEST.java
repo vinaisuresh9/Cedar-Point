@@ -38,10 +38,13 @@ public class ListofRidesTEST extends
 	{
 		TouchUtils.clickView(this, LOR.findViewById(R.id.blue_streak));
 	
+		wait (2000);
 		
 		sendKeys(KeyEvent.KEYCODE_BACK);
 		
 		TouchUtils.clickView(this, LOR.findViewById(R.id.dodgem));
+		
+		wait (2000);
 		
 		sendKeys(KeyEvent.KEYCODE_BACK);
 		
@@ -148,7 +151,7 @@ public class ListofRidesTEST extends
 	
 	
 	
-	/*public static void wait (int n){
+	public static void wait (int n){
         
         long t0, t1;
 
@@ -158,5 +161,5 @@ public class ListofRidesTEST extends
             t1 = System.currentTimeMillis();
         }
         while (t1 - t0 < n);
-    }*/
+    }
 }
