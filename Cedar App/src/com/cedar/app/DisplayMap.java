@@ -14,14 +14,15 @@ public class DisplayMap extends Activity {
         setContentView(R.layout.activity_display_map);
 
     }
-
+    
+    //create options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_display_map, menu);
         return true;
     }
 
-    
+    //when items are selected
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
