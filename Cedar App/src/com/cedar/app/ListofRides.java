@@ -1,16 +1,20 @@
 package com.cedar.app;
 
 import java.io.IOException;
+import java.text.AttributedCharacterIterator.Attribute;
 import java.util.*;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.*;
+import android.view.View.OnClickListener;
 import android.widget.*;
 import android.content.*;
 
 public class ListofRides extends Activity  {
 	
-	public List<String> ridesList;
+	private RelativeLayout layout;
+	private ScrollView scroller;
+	public List<Ride> ridesList;
 	public List<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.ride";
 
@@ -18,33 +22,37 @@ public class ListofRides extends Activity  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        ScrollView scroller = new ScrollView(this);
-        RelativeLayout layout = new RelativeLayout(this);
+        
+        //Create Layout programmatically with textviews
+        scroller = new ScrollView(this);
+        layout = new RelativeLayout(this);
         RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
+        layout.setLayoutParams(rlp);
+        layout.setBackgroundColor(getResources().getColor(R.color.black));
         
         
-        
-        
-        
-        
-        setContentView(R.layout.activity_listof_rides);
+        //setContentView(R.layout.activity_listof_rides);
         
         fullListofRides = new LinkedList<Ride>();
-        ridesList = new LinkedList<String>();
+        ridesList = new LinkedList<Ride>();
         
         try {
         	for (int i = 1; i < 31; i ++)
         	{
-        		fullListofRides.add(Ride.DeserializeFromXML(getAssets().open("Rides/Ride1")));
+        		fullListofRides.add(Ride.DeserializeFromXML(getAssets().open("Rides/Ride" + i)));
         	}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		}
         
+        CreateScreen();
         
+        scroller.addView(layout);
+        setContentView(scroller);
+
         
     }
 
@@ -54,11 +62,105 @@ public class ListofRides extends Activity  {
         return true;
     }
     
+    public void CreateScreen()
+    {
+        int lastid = 1;
+
+        for (Ride r : fullListofRides)
+        {
+        	TextView tv = CreateTextView(r.name, lastid);
+
+       		 //Handle Ride Details Clicking
+       		 tv.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					System.out.println("cool");
+					
+				}
+			}); 
+       		 layout.addView(tv);
+       		 
+       		 EnhancedCheckBox e = CreateCheckBox(r, lastid + 30);
+       		 
+       		 e.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					if (((EnhancedCheckBox) v).isChecked())
+					{
+						ridesList.add(((EnhancedCheckBox) v).ride);
+					}
+					else
+					{
+						ridesList.remove((((EnhancedCheckBox) v).ride));
+					}
+					
+			        
+			        for (Ride r : ridesList)
+			        {
+			        	System.out.println(r.name);
+			        }
+					
+				}
+			});
+       		 
+       		 layout.addView(e);
+       		lastid ++;
+        }
+    }
+    
+    
+    public TextView CreateTextView(String name, int id)
+    {
+    	TextView tv = new TextView(this);
+		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+		lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+		if (id != 1)
+		{
+			lp.addRule(RelativeLayout.BELOW, id - 1);
+		}
+		else
+		{
+			lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+		}
+		tv.setLayoutParams(lp);
+		tv.setTextColor(getResources().getColor(R.color.white));
+		tv.setText(name);
+		tv.setId(id);
+		tv.setTextSize(25);
+		
+		
+		
+		return tv;
+    }
+    
+    
+    public EnhancedCheckBox CreateCheckBox(Ride r, int id)
+    {
+    	EnhancedCheckBox e = new EnhancedCheckBox(this, r);
+    	RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+    	lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+    	if (id != 1)
+    	{
+    		lp.addRule(RelativeLayout.BELOW, id-1);
+    	}
+    	//Align with text
+    	lp.addRule(RelativeLayout.ALIGN_TOP, id - 30);
+    	lp.addRule(RelativeLayout.ALIGN_BOTTOM, id - 30);
+    	e.setLayoutParams(lp);
+    	
+    	return e;
+
+    }
+    
     /*
      * Function to add Rides to list for route information
      * 
      */
-    public void AddtoList (View view)
+    /*public void AddtoList (View view)
     {
 
     	final CheckBox check = (CheckBox)view;
@@ -369,7 +471,7 @@ public class ListofRides extends Activity  {
     	 
     	 }
     	 
-    }
+    }*/
     
     public void ViewMap(View view)
     {
@@ -509,5 +611,7 @@ public class ListofRides extends Activity  {
     	
    	 }
     }
+
+
 
 }
