@@ -15,39 +15,9 @@ public final class R {
         public static final int white=0x7f050001;
     }
     public static final class drawable {
-        public static final int bluestreak_thumb=0x7f020000;
-        public static final int calypso_thumb=0x7f020001;
-        public static final int cedardowns_thumb=0x7f020002;
-        public static final int cedarpointmap=0x7f020003;
-        public static final int corkscrew_thumb=0x7f020004;
-        public static final int dodgem_thumb=0x7f020005;
-        public static final int gemini_thumb=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int iron_thumb=0x7f020009;
-        public static final int jrgem_thumb=0x7f02000a;
-        public static final int magnum_thumb=0x7f02000b;
-        public static final int mantis_thumb=0x7f02000c;
-        public static final int matterhorn_thumb=0x7f02000d;
-        public static final int maverick_thumb=0x7f02000e;
-        public static final int maxair_thumb=0x7f02000f;
-        public static final int mean_thumb=0x7f020010;
-        public static final int milli_thumb=0x7f020011;
-        public static final int mineride_thumb=0x7f020012;
-        public static final int monster_thumb=0x7f020013;
-        public static final int oceanmotion_thumb=0x7f020014;
-        public static final int powertower_thumb=0x7f020015;
-        public static final int raptor_thumb=0x7f020016;
-        public static final int scrambler_thumb=0x7f020017;
-        public static final int skyhawk_thumb=0x7f020018;
-        public static final int super_thumb=0x7f020019;
-        public static final int troika_thumb=0x7f02001a;
-        public static final int ttd_thumb=0x7f02001b;
-        public static final int waveswinger_thumb=0x7f02001c;
-        public static final int wicked_thumb=0x7f02001d;
-        public static final int witches_thumb=0x7f02001e;
-        public static final int woodstock_thumb=0x7f02001f;
-        public static final int ws_thumb=0x7f020020;
+        public static final int cedarpointmap=0x7f020000;
+        public static final int ic_action_search=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
         public static final int blue_streak=0x7f080002;

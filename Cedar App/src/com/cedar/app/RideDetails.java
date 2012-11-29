@@ -3,12 +3,16 @@ package com.cedar.app;
 
 import android.app.Activity;
 import android.content.*;
+import android.graphics.BitmapFactory;
 import android.widget.*;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
+import android.graphics.*;
+
+import java.io.*;
 
 public class RideDetails extends Activity {
 	RelativeLayout layout;
@@ -82,7 +86,11 @@ public class RideDetails extends Activity {
     		textView = this.CreateTextView(ride[0], ride[2], ride[3], ride[4], ride[5]);
     		layout.addView(textView);
     		
-    		imageView = CreateImageView(R.drawable.bluestreak_thumb);
+    		try {
+				imageView = CreateImageView(ride[0]);
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
     		layout.addView(imageView);
     		break;
     	
@@ -90,7 +98,11 @@ public class RideDetails extends Activity {
 			textView = this.CreateTextView(ride[0], ride[3], ride[5]);
 			layout.addView(textView);
 			
-			imageView = CreateImageView(R.drawable.calypso_thumb);
+			try {
+				imageView = CreateImageView(ride[0]);
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
 			layout.addView(imageView);
 			break;
 			
@@ -133,7 +145,7 @@ public class RideDetails extends Activity {
 		return tv;
     }
     
-    public ImageView CreateImageView (int imageResource)
+    public ImageView CreateImageView (String name) throws IOException
     {
     	ImageView image = new ImageView(this);
 		RelativeLayout.LayoutParams l = new RelativeLayout.LayoutParams(
@@ -141,7 +153,12 @@ public class RideDetails extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
 		image.setLayoutParams(l);
-		image.setImageResource(imageResource);
+		
+		InputStream is = getAssets().open("Thumbnails/" + name + ".jpg");
+		Bitmap bitmap = BitmapFactory.decodeStream(is);
+		
+		image.setImageBitmap(bitmap);
+
 		return image;
     }
     

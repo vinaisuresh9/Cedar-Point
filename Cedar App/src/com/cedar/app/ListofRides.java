@@ -154,6 +154,7 @@ public class ListofRides extends Activity  {
 		tv.setText(r.name);
 		tv.setId(id);
 		tv.setTextSize(25);
+		tv.setPadding(0, 0, 0, 25);
 		
 		
 		
