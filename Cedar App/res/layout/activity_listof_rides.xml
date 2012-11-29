@@ -6,7 +6,7 @@
 	    android:layout_height= "fill_parent"
 	    android:id="@+id/scroller">
 
-	<RelativeLayout 
+<RelativeLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal" >
@@ -630,35 +630,7 @@
 	        android:onClick="AddtoList"
 	        android:textOff="No"
 	        android:textOn="Yes" />	 
-	        
-	    
-	    <!-- Snake River Falls -->
-	
-	    <TextView
-	        android:id="@+id/snake_river_falls"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:textColor="@color/white"
-	        android:layout_alignTop="@+id/snake_river_falls_button"
-	        android:layout_below="@+id/skyhawk"
-	        android:layout_toLeftOf="@+id/snake_river_falls_button"
-	        android:text="@string/snake_river_falls"
-	        android:clickable="true"
-	        android:onClick="RideDetails"
-	        android:textAppearance="?android:attr/textAppearanceLarge" />
-	
-	    <CheckBox
-	        android:id="@+id/snake_river_falls_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textColor="@color/white"
-	        android:layout_below="@+id/skyhawk_button"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginTop="15dp"
-	        android:onClick="AddtoList"
-	        android:textOff="No"
-	        android:textOn="Yes" />	
+
 	    
 	    
 	     <!-- Super Himalaya -->
@@ -670,7 +642,7 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/super_himalaya_button"
-	        android:layout_below="@+id/snake_river_falls"
+	        android:layout_below="@+id/skyhawk"
 	        android:layout_toLeftOf="@+id/super_himalaya_button"
 	        android:text="@string/super_himalaya"
 	        android:clickable="true"
@@ -682,41 +654,13 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/snake_river_falls_button"
+	        android:layout_below="@+id/skyhawk_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:onClick="AddtoList"
 	        android:textOff="No"
 	        android:textOn="Yes" />	 
-	        
-	    
-	    <!-- Super Himalaya -->
-	
-	    <TextView
-	        android:id="@+id/thunder_canyon"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:textColor="@color/white"
-	        android:layout_alignTop="@+id/thunder_canyon_button"
-	        android:layout_below="@+id/super_himalaya"
-	        android:layout_toLeftOf="@+id/thunder_canyon_button"
-	        android:text="@string/thunder_canyon"
-	        android:clickable="true"
-	        android:onClick="RideDetails"
-	        android:textAppearance="?android:attr/textAppearanceLarge" />
-	
-	    <CheckBox
-	        android:id="@+id/thunder_canyon_button"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textColor="@color/white"
-	        android:layout_below="@+id/super_himalaya_button"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginTop="15dp"
-	        android:onClick="AddtoList"
-	        android:textOff="No"
-	        android:textOn="Yes" />	 
+	         
 	        
 	    
 	    <!-- Top Thrill Dragster -->
@@ -728,7 +672,7 @@
 	        android:layout_alignParentLeft="true"
 	        android:textColor="@color/white"
 	        android:layout_alignTop="@+id/top_thrill_button"
-	        android:layout_below="@+id/thunder_canyon"
+	        android:layout_below="@+id/super_himalaya"
 	        android:layout_toLeftOf="@+id/top_thrill_button"
 	        android:text="@string/top_thrill"
 	        android:clickable="true"
@@ -740,7 +684,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/white"
-	        android:layout_below="@+id/thunder_canyon_button"
+	        android:layout_below="@+id/super_himalaya_button"
 	        android:layout_alignParentRight="true"
 	        android:layout_marginTop="15dp"
 	        android:onClick="AddtoList"

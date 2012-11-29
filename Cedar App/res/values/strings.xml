@@ -38,8 +38,6 @@
     <color name="white">#FFFFFF</color>
 
     <string name="shoot_the_rapids">Shoot the Rapids</string>
-    <string name="snake_river_falls">Snake River Falls</string>
-    <string name="thunder_canyon">Thunder Canyon</string>
     <string name="button_map">View Map</string>
     <string name="title_activity_display_map">Map</string>
     <string name="map_description">Map of Cedar Point</string>

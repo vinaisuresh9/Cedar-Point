@@ -1,5 +1,6 @@
 package com.cedar.app;
 
+import java.io.IOException;
 import java.util.*;
 import android.os.Bundle;
 import android.app.Activity;
@@ -10,14 +11,40 @@ import android.content.*;
 public class ListofRides extends Activity  {
 	
 	public List<String> ridesList;
+	public List<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.ride";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        ScrollView scroller = new ScrollView(this);
+        RelativeLayout layout = new RelativeLayout(this);
+        RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+        
+        
+        
+        
+        
+        
         setContentView(R.layout.activity_listof_rides);
         
+        fullListofRides = new LinkedList<Ride>();
         ridesList = new LinkedList<String>();
+        
+        try {
+        	for (int i = 1; i < 31; i ++)
+        	{
+        		fullListofRides.add(Ride.DeserializeFromXML(getAssets().open("Rides/Ride1")));
+        	}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+        
+        
         
     }
 
@@ -259,16 +286,6 @@ public class ListofRides extends Activity  {
     			 ridesList.remove(this.getString(R.string.skyhawk));
     		 }
     		 break;
-    	 case R.id.snake_river_falls_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.snake_river_falls));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.snake_river_falls));
-    		 }
-    		 break;
     	 case R.id.super_himalaya_button:
     		 if (check.isChecked())
     		 {
@@ -277,16 +294,6 @@ public class ListofRides extends Activity  {
     		 else
     		 {
     			 ridesList.remove(this.getString(R.string.super_himalaya));
-    		 }
-    		 break;
-    	 case R.id.thunder_canyon_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.thunder_canyon));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.thunder_canyon));
     		 }
     		 break;
     	 case R.id.top_thrill_button:
@@ -466,16 +473,8 @@ public class ListofRides extends Activity  {
 		 intent.putExtra(RIDE, R.string.skyhawk);
 		 startActivity(intent);
 		 break;
-	case R.id.snake_river_falls:
-		 intent.putExtra(RIDE, R.string.snake_river_falls);
-		 startActivity(intent);
-		 break;
 	case R.id.super_himalaya:
 		 intent.putExtra(RIDE, R.string.super_himalaya);
-		 startActivity(intent);
-		 break;
-	case R.id.thunder_canyon:
-		 intent.putExtra(RIDE, R.string.thunder_canyon);
 		 startActivity(intent);
 		 break;
 	case R.id.top_thrill:
