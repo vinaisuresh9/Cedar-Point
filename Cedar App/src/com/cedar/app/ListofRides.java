@@ -1,12 +1,10 @@
 package com.cedar.app;
 
 import java.io.IOException;
-import java.text.AttributedCharacterIterator.Attribute;
 import java.util.*;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.*;
-import android.view.View.OnClickListener;
 import android.widget.*;
 import android.content.*;
 
@@ -16,7 +14,7 @@ public class ListofRides extends Activity  {
 	private ScrollView scroller;
 	public List<Ride> ridesList;
 	public List<Ride> fullListofRides;
-	public final static String RIDE = "com.cedar.ride";
+	public final static String RIDE = "com.cedar.app.ride";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,9 +29,6 @@ public class ListofRides extends Activity  {
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
         layout.setLayoutParams(rlp);
         layout.setBackgroundColor(getResources().getColor(R.color.black));
-        
-        
-        //setContentView(R.layout.activity_listof_rides);
         
         fullListofRides = new LinkedList<Ride>();
         ridesList = new LinkedList<Ride>();
@@ -50,6 +45,8 @@ public class ListofRides extends Activity  {
         
         CreateScreen();
         
+        CreateMapButton();
+        
         scroller.addView(layout);
         setContentView(scroller);
 
@@ -62,19 +59,52 @@ public class ListofRides extends Activity  {
         return true;
     }
     
+    public void CreateMapButton()
+    {
+    	
+    	Button b = new Button(this);
+    	RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+    	
+    	b.setId(61);
+    	b.setText("View Map");
+    	b.setTextColor(getResources().getColor(R.color.white));
+    	lp.addRule(RelativeLayout.BELOW, 60);
+    	b.setLayoutParams(lp);
+    	b.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+		    	Intent intent = new Intent(getApplicationContext(), DisplayMap.class);
+		    	startActivity(intent);
+			}
+		});
+    	
+    	layout.addView(b);
+    
+    	
+    }
+    
     public void CreateScreen()
     {
         int lastid = 1;
 
         for (Ride r : fullListofRides)
         {
-        	TextView tv = CreateTextView(r.name, lastid);
+        	EnhancedTextView tv = CreateTextView(r, lastid);
 
        		 //Handle Ride Details Clicking
        		 tv.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View v) {
-					System.out.println("cool");
+					EnhancedTextView etv = (EnhancedTextView) v;
+					Intent intent = new Intent(getApplicationContext(), RideDetails.class);
+					String[] array = {etv.ride.name, etv.ride.ridetype, etv.ride.duration, etv.ride.heightreq,
+							etv.ride.speed, etv.ride.description};
+					
+			   		intent.putExtra(RIDE, array);
+
+			   		startActivity(intent);
 					
 				}
 			}); 
@@ -94,11 +124,6 @@ public class ListofRides extends Activity  {
 						ridesList.remove((((EnhancedCheckBox) v).ride));
 					}
 					
-			        
-			        for (Ride r : ridesList)
-			        {
-			        	System.out.println(r.name);
-			        }
 					
 				}
 			});
@@ -109,9 +134,9 @@ public class ListofRides extends Activity  {
     }
     
     
-    public TextView CreateTextView(String name, int id)
+    public EnhancedTextView CreateTextView(Ride r, int id)
     {
-    	TextView tv = new TextView(this);
+    	EnhancedTextView tv = new EnhancedTextView(this, r);
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -126,7 +151,7 @@ public class ListofRides extends Activity  {
 		}
 		tv.setLayoutParams(lp);
 		tv.setTextColor(getResources().getColor(R.color.white));
-		tv.setText(name);
+		tv.setText(r.name);
 		tv.setId(id);
 		tv.setTextSize(25);
 		
@@ -151,327 +176,12 @@ public class ListofRides extends Activity  {
     	lp.addRule(RelativeLayout.ALIGN_TOP, id - 30);
     	lp.addRule(RelativeLayout.ALIGN_BOTTOM, id - 30);
     	e.setLayoutParams(lp);
+    	e.setId(id);
     	
     	return e;
 
     }
     
-    /*
-     * Function to add Rides to list for route information
-     * 
-     */
-    /*public void AddtoList (View view)
-    {
-
-    	final CheckBox check = (CheckBox)view;
-    	
-    	 switch (check.getId())
-    	 {
-    	 case R.id.blue_streak_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.blue_streak));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.blue_streak));
-    		 }
-    		 break;
-    	 case R.id.calypso_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.calypso));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.calypso));
-    		 }
-    		 break;
-    	 case R.id.cedar_mine_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.cedar_creek_mine));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.cedar_creek_mine));
-    		 }
-    		 break;
-    	 case R.id.cedar_downs_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.cedar_downs));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.cedar_downs));
-    		 }
-    		 break;
-    	 case R.id.corkscrew_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.corkscrew));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.corkscrew));
-    		 }
-    		 break;
-    	 case R.id.dodgem_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.dodgem));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.dodgem));
-    		 }
-    		 break;
-    	 case R.id.gemini_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.gemini));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.gemini));
-    		 }
-    		 break;
-    	 case R.id.iron_dragon_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.iron_dragon));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.iron_dragon));
-    		 }
-    		 break;
-    	 case R.id.junior_gemini_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.junior_gemini));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.junior_gemini));
-    		 }
-    		 break;
-    	 case R.id.magnum_xl200_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.magnum_xl200));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.magnum_xl200));
-    		 }
-    		 break;
-    	 case R.id.mantis_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.mantis));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.mantis));
-    		 }
-    		 break;
-    	 case R.id.matterhorn_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.matterhorn));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.matterhorn));
-    		 }
-    		 break;
-    	 case R.id.maverick_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.maverick));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.maverick));
-    		 }
-    		 break;
-    	 
-    	 case R.id.maxair_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.maxair));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.maxair));
-    		 }
-    		 break;
-    	 case R.id.mean_streak_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.mean_streak));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.mean_streak));
-    		 }
-    		 break;
-    	 case R.id.millenium_force_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.millenium_force));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.millenium_force));
-    		 }
-    		 break;
-    	 case R.id.monster_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.monster));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.monster));
-    		 }
-    		 break;
-    	 case R.id.ocean_motion_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.ocean_motion));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.ocean_motion));
-    		 }
-    		 break;
-    	 case R.id.power_tower_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.power_tower));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.power_tower));
-    		 }
-    		 break;
-    	 case R.id.raptor_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.raptor));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.raptor));
-    		 }
-    		 break;
-    	 case R.id.scrambler_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.scrambler));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.scrambler));
-    		 }
-    		 break;
-    	 case R.id.skyhawk_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.skyhawk));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.skyhawk));
-    		 }
-    		 break;
-    	 case R.id.super_himalaya_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.super_himalaya));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.super_himalaya));
-    		 }
-    		 break;
-    	 case R.id.top_thrill_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.top_thrill));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.top_thrill));
-    		 }
-    		 break;
-    	 case R.id.troika_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.troika));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.troika));
-    		 }
-    		 break;
-    	 case R.id.wave_swinger_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.wave_swinger));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.wave_swinger));
-    		 }
-    		 break;
-    	 case R.id.wicked_twister_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.wicked_twister));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.wicked_twister));
-    		 }
-    		 break;
-    	 case R.id.wind_seeker_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.wind_seeker));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.wind_seeker));
-    		 }
-    		 break;
-    	 case R.id.witches_wheel_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.witches_wheel));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.witches_wheel));
-    		 }
-    		 break;
-    	 case R.id.woodstock_express_button:
-    		 if (check.isChecked())
-    		 {
-    			 ridesList.add(this.getString(R.string.woodstock_express));
-    		 }
-    		 else
-    		 {
-    			 ridesList.remove(this.getString(R.string.woodstock_express));
-    		 }
-    		 break;
-    	 
-    	 }
-    	 
-    }*/
     
     public void ViewMap(View view)
     {
@@ -480,8 +190,9 @@ public class ListofRides extends Activity  {
     	
     }
 
+    
     //Function to allow details for each ride to show up when clicked
-    public void RideDetails(View view)
+    /*public void RideDetails(View view)
     {
     	Intent intent = new Intent(this, RideDetails.class);
     	
@@ -610,7 +321,7 @@ public class ListofRides extends Activity  {
 		 
     	
    	 }
-    }
+    }*/
 
 
 
