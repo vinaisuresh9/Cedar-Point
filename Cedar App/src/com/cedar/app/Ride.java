@@ -18,6 +18,18 @@ public class Ride {
 	public String speed;
 	public String description;
 	
+	public float mapX;
+	public float mapY;
+	
+	public RideSize size;
+	
+	public enum RideSize
+	{
+		Small,
+		Medium,
+		Large,
+	}	
+	
 	public Ride()
 	{
 		name = "";
@@ -50,8 +62,10 @@ public class Ride {
             toReturn.heightreq = doc.getAttribute("heightreq");
             toReturn.speed = doc.getAttribute("speed");
             toReturn.description = doc.getAttribute("description");
+            toReturn.mapX = Float.parseFloat(doc.getAttribute("mapX"));
+            toReturn.mapY = Float.parseFloat(doc.getAttribute("mapY"));
+            toReturn.size = Enum.valueOf(RideSize.class, doc.getAttribute("size"));
             
-		
         }
 	 catch (ParserConfigurationException pce) {
         System.out.println(pce.getMessage());
