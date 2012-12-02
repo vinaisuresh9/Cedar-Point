@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><Ride name="Blue Streak" ridetype="Roller Coaster" duration="1 min, 45 sec" heightreq="48 inches" speed="40 mph" description="Cedar Point's classic wooden roller coaster!"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Ride description="Cedar Point's classic wooden roller coaster!" duration="1 min, 45 sec" heightreq="48 inches" mapX="723.0" mapY="2106.0" name="Blue Streak" ridetype="Roller Coaster" size="Small" speed="40 mph"/>

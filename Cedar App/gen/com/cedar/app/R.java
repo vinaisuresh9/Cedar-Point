@@ -20,8 +20,8 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int blue_streak=0x7f080002;
-        public static final int blue_streak_button=0x7f080003;
+        public static final int blue_streak=0x7f080003;
+        public static final int blue_streak_button=0x7f080001;
         public static final int calypso=0x7f080004;
         public static final int calypso_button=0x7f080005;
         public static final int cedar_downs=0x7f080008;
@@ -65,7 +65,7 @@ public final class R {
         public static final int raptor_button=0x7f080029;
         public static final int scrambler=0x7f08002a;
         public static final int scrambler_button=0x7f08002b;
-        public static final int scroller=0x7f080001;
+        public static final int scroller=0x7f080002;
         public static final int skyhawk=0x7f08002c;
         public static final int skyhawk_button=0x7f08002d;
         public static final int super_himalaya=0x7f08002e;

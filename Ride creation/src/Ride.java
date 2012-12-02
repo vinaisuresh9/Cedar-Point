@@ -1,6 +1,7 @@
-package com.cedar.app;
+
 
 import java.io.*;
+
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
@@ -8,6 +9,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.*;
 import org.xml.sax.*;
+
 
 public class Ride {
 	
@@ -41,7 +43,20 @@ public class Ride {
 	
 	}
 	
-	public static Ride DeserializeFromXML(InputStream path)
+	public static void main (String[] args)
+	{
+		 
+        Ride c;
+        try {
+			c = Ride.DeserializeFromXML("C:\\Users\\Vinai\\Documents\\GitHub\\Cedar-Point\\Cedar App\\assets\\Rides\\Ride7");
+			Ride.SerializeToXML(c, 522f, 413f, RideSize.Small, "Ride7");
+		} catch (IOException e1) {
+			System.out.print(e1.getMessage());
+		}
+		
+	}
+	
+	public static Ride DeserializeFromXML(String path)
 	{
 		Ride toReturn = new Ride();
 		Document dom;
@@ -113,12 +128,12 @@ public class Ride {
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				DOMSource source = new DOMSource(doc);
-				//StreamResult result = new StreamResult(new FileOutputStream(filePath));
+				StreamResult result = new StreamResult(new FileOutputStream("C:\\Users\\Vinai\\Documents\\GitHub\\Cedar-Point\\Cedar App\\assets\\Rides\\" + filePath));
 				
 				
 		 
 				//Output to console for testing
-				StreamResult result = new StreamResult(System.out);
+				//StreamResult result = new StreamResult(System.out);
 		 
 				transformer.transform(source, result);
 		 
