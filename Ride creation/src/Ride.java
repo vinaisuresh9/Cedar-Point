@@ -45,11 +45,26 @@ public class Ride {
 	
 	public static void main (String[] args)
 	{
+		String x;
+		String y;
+		String s;
 		 
         Ride c;
         try {
-			c = Ride.DeserializeFromXML("C:\\Users\\Vinai\\Documents\\GitHub\\Cedar-Point\\Cedar App\\assets\\Rides\\Ride7");
-			Ride.SerializeToXML(c, 522f, 413f, RideSize.Small, "Ride7");
+        	BufferedReader b = new BufferedReader( new InputStreamReader(System.in));
+        	
+        	for (int i = 8; i < 31; i++ )
+        	{
+        		c = Ride.DeserializeFromXML("C:\\Users\\Vinai\\Documents\\GitHub\\Cedar-Point\\Cedar App\\assets\\Rides\\Ride" + i);
+        		System.out.println("x for Ride" + i);
+        		x = b.readLine();
+        		System.out.println("y for Ride" + i);
+        		y = b.readLine();
+        		System.out.println("s for Ride" + i);
+        		s = b.readLine();
+        		
+        		Ride.SerializeToXML(c, Float.parseFloat(x)/1941f, Float.parseFloat(y)/2793f, Enum.valueOf(RideSize.class, s), "Ride" + i);
+        	}
 		} catch (IOException e1) {
 			System.out.print(e1.getMessage());
 		}
