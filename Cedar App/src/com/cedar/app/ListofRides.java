@@ -6,6 +6,7 @@ import java.util.*;
 import com.cedar.app.Ride.RideSize;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.app.Activity;
 import android.view.*;
 import android.widget.*;
@@ -18,6 +19,7 @@ public class ListofRides extends Activity  {
 	public List<Ride> ridesList;
 	public List<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.app.ride";
+	public final static String LISTOFRIDES = "com.cedar.app.list";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,8 @@ public class ListofRides extends Activity  {
         layout.setLayoutParams(rlp);
         layout.setBackgroundColor(getResources().getColor(R.color.black));
        
-        fullListofRides = new LinkedList<Ride>();
-        ridesList = new LinkedList<Ride>();
+        fullListofRides = new ArrayList<Ride>();
+        ridesList = new ArrayList<Ride>();
         
         try {
         	for (int i = 1; i < 31; i ++)
@@ -189,7 +191,11 @@ public class ListofRides extends Activity  {
     
     public void ViewMap(View view)
     {
-    	Intent intent = new Intent(this, DisplayMap.class);
+    	Intent intent = new Intent(this, DisplayMap. class);
+		Parcelable[] p = (Parcelable[]) ridesList.toArray();
+		
+		intent.putExtra(LISTOFRIDES, p);
+		
     	startActivity(intent);
     	
     }
