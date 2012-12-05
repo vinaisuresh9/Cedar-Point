@@ -16,8 +16,8 @@ public class ListofRides extends Activity  {
 	
 	private RelativeLayout layout;
 	private ScrollView scroller;
-	public List<Ride> ridesList;
-	public List<Ride> fullListofRides;
+	public static ArrayList<Ride> ridesList;
+	public ArrayList<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.app.ride";
 	public final static String LISTOFRIDES = "com.cedar.app.list";
 
@@ -81,6 +81,7 @@ public class ListofRides extends Activity  {
 			
 			public void onClick(View v) {
 		    	Intent intent = new Intent(getApplicationContext(), DisplayMap.class);
+
 		    	startActivity(intent);
 			}
 		});
@@ -187,19 +188,6 @@ public class ListofRides extends Activity  {
     	return e;
 
     }
-    
-    
-    public void ViewMap(View view)
-    {
-    	Intent intent = new Intent(this, DisplayMap. class);
-		Parcelable[] p = (Parcelable[]) ridesList.toArray();
-		
-		intent.putExtra(LISTOFRIDES, p);
-		
-    	startActivity(intent);
-    	
-    }
-
     
  
 

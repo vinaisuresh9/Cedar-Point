@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.app.Activity;
+import android.content.*;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.*;
@@ -16,26 +18,25 @@ public class DisplayMap extends Activity {
 	private ScrollView scroller;
 	private RelativeLayout layout;
 	public ArrayList<MapNode> nodes;
+	private ArrayList<Ride> ridesList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        scroller = new ScrollView(this);
-        layout = new RelativeLayout(this);
-        RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        layout.setLayoutParams(rlp);
-        layout.setBackgroundColor(getResources().getColor(R.color.black));
-        
-        try {
-			CreateMap();
+
+		try {
+			Bitmap b = BitmapFactory.decodeStream(getAssets().open("cedarpointmap.png"));
+			setContentView(new MapCanvas(this, b));
 		} catch (IOException e) {
-			System.out.println( "Error while trying to create Map: " + e.getMessage());
+			System.out.println(e.getMessage());
 		}
-        
-        
+		
+
+        for (Ride r : ListofRides.ridesList)
+        {
+        	System.out.println(r.name);
+        }
+       
 
     }
     
@@ -60,13 +61,7 @@ public class DisplayMap extends Activity {
     public void CreateMap() throws IOException
     {
     	Bitmap b = BitmapFactory.decodeStream(getAssets().open("cedarpointmap.bmp"));
-    	Canvas im = new Canvas(b);
-    	RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-    	
-    	
-    	
+
     	
     }
 
