@@ -17,7 +17,7 @@ public class ListofRides extends Activity  {
 	private RelativeLayout layout;
 	private ScrollView scroller;
 	public static ArrayList<Ride> ridesList;
-	public ArrayList<Ride> fullListofRides;
+	public static ArrayList<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.app.ride";
 	public final static String LISTOFRIDES = "com.cedar.app.list";
 
