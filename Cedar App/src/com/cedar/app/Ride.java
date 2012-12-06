@@ -26,6 +26,8 @@ public class Ride implements Parcelable {
 	
 	public RideSize size;
 	
+	public String video;
+	
 	public enum RideSize
 	{
 		Small,
@@ -45,6 +47,8 @@ public class Ride implements Parcelable {
 		mapX = 0;
 		mapY = 0;
 		size = RideSize.Small;
+		
+		video = "";
 	
 	}
 	
@@ -73,6 +77,7 @@ public class Ride implements Parcelable {
             toReturn.mapX = Float.parseFloat(doc.getAttribute("mapX"));
             toReturn.mapY = Float.parseFloat(doc.getAttribute("mapY"));
             toReturn.size = Enum.valueOf(RideSize.class, doc.getAttribute("size"));
+            toReturn.video = doc.getAttribute("video");
             
         }
 	 catch (ParserConfigurationException pce) {

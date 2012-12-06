@@ -5,14 +5,19 @@ import android.app.Activity;
 import android.content.*;
 import android.graphics.BitmapFactory;
 import android.widget.*;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.graphics.*;
 
 import java.io.*;
+
+import com.keyes.youtube.OpenYouTubePlayerActivity;
 
 public class RideDetails extends Activity {
 	RelativeLayout layout;
@@ -21,11 +26,13 @@ public class RideDetails extends Activity {
 	String speed;
 	String description;
 	
-	Ride ride;
+	String[] ride;
 	
 	//Text View 
 	TextView textView;
 	ImageView imageView;
+	
+	public static final String Video = "com.cedar.app.video";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,8 @@ public class RideDetails extends Activity {
         setContentView(layout);
         
         this.DetailsforRide();
+        
+        YouTubeButton();
     }
 
     @Override
@@ -65,12 +74,40 @@ public class RideDetails extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    
+    public void YouTubeButton()
+    {
+    	if (!ride[6].isEmpty())
+    	{
+	    	Button b = new Button(this);
+	    	RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+	                RelativeLayout.LayoutParams.MATCH_PARENT,
+	                RelativeLayout.LayoutParams.WRAP_CONTENT);
+	    	lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+	    	lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+	    	b.setText("See Video!");
+	    	b.setTextSize(20);
+	    	b.setPadding(0, 50, 0, 0);
+	    	b.setBackgroundColor(Color.BLACK);
+	    	b.setTextColor(Color.WHITE);
+	    	b.setLayoutParams(lp);
+	    	b.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					/*Intent intent = new Intent(null, Uri.parse("ytpl://" + ride[6]), getApplicationContext(), OpenYouTubePlayerActivity.class);
+					startActivity(intent);*/
+					
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(ride[6])));
+				}
+			});
+	    	
+	    	layout.addView(b);
+    	}
+    }
     
     public void DetailsforRide()
     {
     	Intent intent = getIntent();
-    	String[] ride = intent.getStringArrayExtra(ListofRides.RIDE);
+    	ride = intent.getStringArrayExtra(ListofRides.RIDE);
     	
     	RideType r;
     	
@@ -117,9 +154,10 @@ public class RideDetails extends Activity {
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
-		lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+		lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 		lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
 		tv.setLayoutParams(lp);
+		tv.setPadding(0, 0, 0, 20);
 		tv.setTextColor(getResources().getColor(R.color.white));
 		tv.setText("Name:	" + name + "\nDuration: 	" + duration +
 				"\nHeight Requirement:	" + heightreq +
@@ -129,6 +167,7 @@ public class RideDetails extends Activity {
     }
     
     
+ 
     //TextView creation for thrillrides, which do not have duration and speed statistics
     public TextView CreateTextView(String name, String heightreq, String description)
     {
@@ -136,8 +175,10 @@ public class RideDetails extends Activity {
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
-		lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+		//Align the view near the bottom about 20 pixles from the bottom
+		lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 		lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+		tv.setPadding(0, 0, 0, 20);
 		tv.setLayoutParams(lp);
 		tv.setTextColor(getResources().getColor(R.color.white));
 		tv.setText("Name:	" + name + "\nHeight Requirement:	" + heightreq + "\n" +
@@ -145,6 +186,8 @@ public class RideDetails extends Activity {
 		return tv;
     }
     
+    
+    //Create imageview for the picture of each ride dynamically from the Assets Folder
     public ImageView CreateImageView (String name) throws IOException
     {
     	ImageView image = new ImageView(this);
@@ -152,11 +195,21 @@ public class RideDetails extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		image.setLayoutParams(l);
+		l.addRule(RelativeLayout.CENTER_IN_PARENT);
 		
+		Display display = getWindowManager().getDefaultDisplay();
+        int screenwidth = display.getWidth();
+        int screenheight = display.getHeight();
+		
+        //Make sure image does not scale past the top half of the screen
+		image.setLayoutParams(l);
+		image.setAdjustViewBounds(true);
+		//image.setMaxHeight(screenheight/2);
+		//image.setMaxWidth(screenwidth/2);
+		
+		//Grab image from the assets folder and load it into an imageview
 		InputStream is = getAssets().open("Thumbnails/" + name + ".jpg");
 		Bitmap bitmap = BitmapFactory.decodeStream(is);
-		
 		image.setImageBitmap(bitmap);
 
 		return image;

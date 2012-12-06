@@ -106,7 +106,7 @@ public class ListofRides extends Activity  {
 					EnhancedTextView etv = (EnhancedTextView) v;
 					Intent intent = new Intent(getApplicationContext(), RideDetails.class);
 					String[] array = {etv.ride.name, etv.ride.ridetype, etv.ride.duration, etv.ride.heightreq,
-							etv.ride.speed, etv.ride.description};
+							etv.ride.speed, etv.ride.description, etv.ride.video};
 					
 			   		intent.putExtra(RIDE, array);
 
