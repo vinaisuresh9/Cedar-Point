@@ -63,13 +63,14 @@ public class DisplayMap extends Activity {
 			System.out.println(e.getMessage());
 		}
 
-		for (MapNode n : PathMapNodes)
+		/*for (MapNode n : PathMapNodes)
 		{
 			AddPoint((int) (screenwidth * n.x), (int) (screenheight * n.y));
 		}
        
-        CreatePath(locations);
-
+        CreatePath(locations);*/
+		
+		CreateRideNodes(screenwidth, screenheight);
     }
     
     //create options menu
@@ -108,7 +109,9 @@ public class DisplayMap extends Activity {
     	PathMapNodes.add(new IntermediateMapNode(1009,1107));
     	PathMapNodes.add(new IntermediateMapNode(993,1245));
     	PathMapNodes.add(new IntermediateMapNode(1000,1399));
-    	PathMapNodes.add(new IntermediateMapNode(1154,1676));
+    	PathMapNodes.add(new IntermediateMapNode(987,1604));
+    	
+    	
     	PathMapNodes.add(new IntermediateMapNode(1289,1701));
     	PathMapNodes.add(new IntermediateMapNode(1273,1846));
     	PathMapNodes.add(new IntermediateMapNode(1280,2012));
@@ -136,6 +139,18 @@ public class DisplayMap extends Activity {
     	
     	map.DrawPath(pa);
     	
+    }
+    
+    public void CreateRideNodes(int width, int height)
+    {
+    	Path pa = new Path();
+    	
+    	for (Ride r : ListofRides.fullListofRides)
+    	{
+    		pa.addCircle((width) * r.mapX,height * r.mapY, 3, Path.Direction.CW);
+    	}
+    	
+    	map.DrawRides(pa);
     }
     
 

@@ -15,12 +15,14 @@ public class MapCanvas extends View {
 	InputStream is;
 	private Paint paint;
 	Bitmap b;
-	Path p;
+	Path pathnodes;
+	Path ridenodes;
 	boolean pathdrawn;
 	
 	public MapCanvas(Context context, Bitmap map){
 		super(context);
-		p = new Path();
+		pathnodes = new Path();
+		ridenodes = new Path();
 		pathdrawn = false;
 		
 		WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
@@ -49,23 +51,34 @@ public class MapCanvas extends View {
 		paint.setAntiAlias(true);
 		
 		Path route = new Path();
-		route.set(p);
+		route.set(pathnodes);
+		
+		Path rides = new Path();
+		rides.set(ridenodes);
+		
 		
 		if (pathdrawn)
 		{
 			canvas.drawPath(route, paint);
+		}
+		if (!rides.isEmpty())
+		{
+			canvas.drawPath(rides, paint);
 		}
 		invalidate();
 	}
 	
 	public void DrawPath(Path path)
 	{
-		p.set(path);
+		pathnodes.set(path);
 		pathdrawn = true;
-		invalidate();
-		
-		
+		invalidate();	
 	}
 
+	public void DrawRides(Path p)
+	{
+		ridenodes.set(p);
+		invalidate();
+	}
 
 }
