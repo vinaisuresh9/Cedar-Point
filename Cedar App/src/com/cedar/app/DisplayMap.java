@@ -101,14 +101,14 @@ public class DisplayMap extends Activity {
     //This method creates the path nodes which will be connected for the shortest path algorithm
     public void CreatePathNodes()
     {
-    	pathMapNodes.add(new IntermediateMapNode(1015,2314));
-    	pathMapNodes.add(new IntermediateMapNode(1000,1899));
+    	pathMapNodes.add(new IntermediateMapNode(1015,2314, ListofRides.getRide("Ocean Motion")));
+    	pathMapNodes.add(new IntermediateMapNode(1000,1899, ListofRides.getRide("Raptor"), ListofRides.getRide("Witches' Wheel"),  ListofRides.getRide("Blue Streak"),  ListofRides.getRide("Cedar Racing Derby")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(0), pathMapNodes.get(1)));
     	pathMapNodes.add(new IntermediateMapNode(1000,1692));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(1), pathMapNodes.get(2)));
     	pathMapNodes.add(new IntermediateMapNode(987,1519));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(2), pathMapNodes.get(3)));
-    	pathMapNodes.add(new IntermediateMapNode(770,1324));
+    	pathMapNodes.add(new IntermediateMapNode(770,1324,  ListofRides.getRide("Iron Dragon"),  ListofRides.getRide("Millenium Force"),  ListofRides.getRide("Dodgem")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(4)));
     	pathMapNodes.add(new IntermediateMapNode(600,1091));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(4), pathMapNodes.get(5)));
@@ -131,13 +131,13 @@ public class DisplayMap extends Activity {
     	pathMapNodes.add(new IntermediateMapNode(1000,1399));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(13), pathMapNodes.get(14)));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(14)));    	
-    	pathMapNodes.add(new IntermediateMapNode(1276,1604));
+    	pathMapNodes.add(new IntermediateMapNode(1276,1604, ListofRides.getRide("WindSeeker"),  ListofRides.getRide("Calypso")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(15)));
-    	pathMapNodes.add(new IntermediateMapNode(1280,1761));
+    	pathMapNodes.add(new IntermediateMapNode(1280,1761, ListofRides.getRide("Woodstock Express")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(15), pathMapNodes.get(16)));
-    	pathMapNodes.add(new IntermediateMapNode(1280,1902));
+    	pathMapNodes.add(new IntermediateMapNode(1280,1902, ListofRides.getRide("Wicked Twister")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(16), pathMapNodes.get(17)));
-    	pathMapNodes.add(new IntermediateMapNode(1141,1902));
+    	pathMapNodes.add(new IntermediateMapNode(1141,1902, ListofRides.getRide("MaXair")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(17), pathMapNodes.get(18)));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(18), pathMapNodes.get(1)));
     	

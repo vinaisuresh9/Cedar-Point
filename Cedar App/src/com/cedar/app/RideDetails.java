@@ -52,9 +52,11 @@ public class RideDetails extends Activity {
         layout.setBackgroundColor(getResources().getColor(R.color.black));
         setContentView(layout);
         
+        YouTubeButton();
+        
         this.DetailsforRide();
         
-        YouTubeButton();
+       
     }
 
     @Override
@@ -86,6 +88,7 @@ public class RideDetails extends Activity {
 	    	lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 	    	b.setText("See Video!");
 	    	b.setTextSize(20);
+	    	b.setId(0);
 	    	b.setPadding(0, 50, 0, 0);
 	    	b.setBackgroundColor(Color.BLACK);
 	    	b.setTextColor(Color.WHITE);

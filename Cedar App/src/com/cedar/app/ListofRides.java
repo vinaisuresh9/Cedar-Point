@@ -28,10 +28,17 @@ public class ListofRides extends Activity  {
 	public final static String LISTOFRIDES = "com.cedar.app.list";
 	
 	private static ListofRides instance;
+	
+	int screenwidth;
+	int screenheight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        Display display = getWindowManager().getDefaultDisplay();
+        screenwidth = display.getWidth();
+        screenheight = display.getHeight();
         
         instance = this;
         
