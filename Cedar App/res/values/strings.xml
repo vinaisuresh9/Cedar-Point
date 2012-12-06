@@ -43,5 +43,6 @@
     <string name="map_description">Map of Cedar Point</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_ride_details">Ride Details</string>
+    <color name="blue">#0000FF</color>
 
 </resources>

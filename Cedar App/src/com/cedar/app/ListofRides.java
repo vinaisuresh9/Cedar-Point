@@ -3,6 +3,8 @@ package com.cedar.app;
 import java.io.IOException;
 import java.util.*;
 
+import org.xmlpull.v1.XmlPullParserException;
+
 import com.cedar.app.Ride.RideSize;
 
 import android.os.Bundle;
@@ -11,6 +13,10 @@ import android.app.Activity;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+import android.graphics.Color;
 
 public class ListofRides extends Activity  {
 	
@@ -20,11 +26,14 @@ public class ListofRides extends Activity  {
 	public static ArrayList<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.app.ride";
 	public final static String LISTOFRIDES = "com.cedar.app.list";
+	
+	private static ListofRides instance;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        instance = this;
         
         //Create Layout programmatically with textviews
         scroller = new ScrollView(this);
@@ -89,6 +98,11 @@ public class ListofRides extends Activity  {
     	layout.addView(b);
     
     	
+    }
+    
+    public static Context getContext()
+    {
+    	return instance;
     }
     
     public void CreateScreen()
@@ -156,7 +170,19 @@ public class ListofRides extends Activity  {
 			lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 		}
 		tv.setLayoutParams(lp);
-		tv.setTextColor(getResources().getColor(R.color.white));
+	  /* XmlResourceParser xpp=Resources.getSystem().getXml 
+	    		(R.color.textfieldcolors); 
+	   try {
+		ColorStateList csl = ColorStateList.createFromXml(getResources(), xpp);
+		   tv.setTextColor(csl);
+	} catch (XmlPullParserException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 	*/	
+		tv.setTextColor(Color.WHITE);
 		tv.setText(r.name);
 		tv.setId(id);
 		tv.setTextSize(25);
@@ -188,6 +214,16 @@ public class ListofRides extends Activity  {
     	return e;
 
     }
+
+	public static Ride getRide(String string) {
+		for (Ride r : fullListofRides)
+		{
+			if (r.name == string)
+				return r;
+		}
+		return null;
+		
+	}
     
  
 

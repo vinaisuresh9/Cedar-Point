@@ -1,39 +1,54 @@
 package com.cedar.app;
 
 import java.io.*;
+import java.util.ArrayList;
 
 import android.content.*;
 import android.graphics.*;
+import android.graphics.Paint.Align;
+import android.graphics.Paint.Cap;
 import android.widget.*;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.WindowManager;
+import android.view.View.*;
+import android.view.*;
 
-public class MapCanvas extends View {
+public class MapCanvas extends View implements OnTouchListener {
 	InputStream is;
 	private Paint paint;
 	Bitmap b;
 	Path pathnodes;
 	Path ridenodes;
+	Path pathing;
+	int height;
+	int width;
+	Context c;
 	boolean pathdrawn;
+	ArrayList<MapNode> pathMapNodes = new ArrayList<MapNode>();
+	private ArrayList<MapEdge> pathMapEdges = new ArrayList<MapEdge>();
 	
 	public MapCanvas(Context context, Bitmap map){
 		super(context);
+		c = context;
 		pathnodes = new Path();
 		ridenodes = new Path();
+		pathing = new Path();
 		pathdrawn = false;
+		
+		setOnTouchListener(this);
+		
 		
 		WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
-		int height = display.getHeight();
-		int width = display.getWidth();
+		height = display.getHeight();
+		width = display.getWidth();
 		
 		int statusBarHeight = (int)Math.ceil(25 * getContext().getResources().getDisplayMetrics().density);
 		
-		b = Bitmap.createScaledBitmap(map, width, height - statusBarHeight, true);
-		
+		b = Bitmap.createScaledBitmap(map, width, height - statusBarHeight, true);	
 		
 	}
 	
@@ -44,41 +59,102 @@ public class MapCanvas extends View {
 		canvas.drawBitmap(b, 0,0, null);
 		
     	Paint paint = new Paint();
-		paint = new Paint();
 		paint.setColor(Color.BLACK);
 		paint.setStyle(Paint.Style.STROKE);
-		paint.setStrokeWidth(10);
+		paint.setStrokeWidth(5);
 		paint.setAntiAlias(true);
 		
-		Path route = new Path();
-		route.set(pathnodes);
+		Paint n = new Paint();
+		n.setColor(Color.RED);
+		n.setStyle(Paint.Style.STROKE);
+		n.setStrokeWidth(5);
+		n.setAntiAlias(true);
+		n.setStrokeCap(Cap.ROUND);
+
+		Paint textPaint = new Paint();
+		textPaint.setColor(Color.WHITE);
+		textPaint.setTextSize(16f);
+		textPaint.setTextAlign(Align.CENTER);
 		
-		Path rides = new Path();
-		rides.set(ridenodes);
+		Paint backPaint = new Paint();
+		backPaint.setColor(Color.BLACK);
+		backPaint.setTypeface(Typeface.DEFAULT_BOLD);
+		backPaint.setStrokeWidth(2f);
+		backPaint.setTextSize(16f);
+		backPaint.setStyle(Paint.Style.STROKE);
+		backPaint.setTextAlign(Align.CENTER);
 		
 		
-		if (pathdrawn)
+		ArrayList<MapNode> nodes = pathMapNodes;
+		ArrayList<MapEdge> edges = pathMapEdges;
+		
+		for (MapEdge edge : edges)
 		{
-			canvas.drawPath(route, paint);
+			canvas.drawLine(width*edge.node1.x, height*edge.node1.y, width*edge.node2.x, height*edge.node2.y, n);
 		}
-		if (!rides.isEmpty())
+		
+		for (MapNode node : nodes)
 		{
-			canvas.drawPath(rides, paint);
+			canvas.drawCircle(width*node.x,height* node.y, 3, paint);
+		}
+		
+		for (Ride ride : ListofRides.fullListofRides)
+		{
+			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
+			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
 		invalidate();
 	}
 	
-	public void DrawPath(Path path)
+	
+	void buttonPressedAt(float x, float y)
 	{
-		pathnodes.set(path);
-		pathdrawn = true;
-		invalidate();	
+		for (Ride r : ListofRides.fullListofRides)
+		{
+			if (Math.abs((r.mapX * width - x)) < 25 && Math.abs((r.mapY * height - y)) < 25)
+			{
+				showRideInfo(r);
+				return;
+			}
+		}
+	}
+	
+	private void showRideInfo(Ride r) {
+		Intent intent = new Intent(c, RideDetails.class);
+		String[] array = {r.name, r.ridetype, r.duration, r.heightreq,
+				r.speed, r.description, r.video};
+		
+   		intent.putExtra(ListofRides.RIDE, array);
+
+   		c.startActivity(intent);
+		
 	}
 
-	public void DrawRides(Path p)
-	{
-		ridenodes.set(p);
+
+	public void drawPathNode(ArrayList<MapNode> pathMapNodes) {
+		this.pathMapNodes = pathMapNodes;
 		invalidate();
 	}
+
+	public void DrawEdges(ArrayList<MapEdge> pathMapEdges) {
+
+		this.pathMapEdges = pathMapEdges;
+	}
+
+	public boolean onTouch(View v, MotionEvent event) {
+		final int action = event.getAction();
+        switch (action & MotionEvent.ACTION_MASK) 
+        {
+	        case 0: 
+	        {	
+	        	float x = event.getX();
+	        	float y = event.getY();
+	        	buttonPressedAt(x, y);
+	        	break;	
+	        }
+        }
+        return true;
+	}
+	
 
 }

@@ -26,6 +26,11 @@ public class DisplayMap extends Activity {
 	private ArrayList<Point> locations;
 	
 	private MapCanvas map;
+	
+	private Path pa;
+	
+	int screenwidth;
+	int screenheight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,13 +38,14 @@ public class DisplayMap extends Activity {
         //Get height and width of screen
         
         Display display = getWindowManager().getDefaultDisplay();
-        int screenwidth = display.getWidth();
-        int screenheight = display.getHeight();
+        screenwidth = display.getWidth();
+        screenheight = display.getHeight();
         
         
-        
+        pa = new Path();
         ridesForUser = new ArrayList<MapNode>();
         pathMapNodes = new ArrayList<MapNode>();
+        pathMapEdges = new ArrayList<MapEdge>();
         locations = new ArrayList<Point>();
         CreatePathNodes();
         fullMap = new ArrayList<MapNode>(pathMapNodes);
@@ -64,17 +70,17 @@ public class DisplayMap extends Activity {
 			System.out.println(e.getMessage());
 		}
 
-		/*for (MapNode n : PathMapNodes)
-		{
-			AddPoint((int) (screenwidth * n.x), (int) (screenheight * n.y));
-		}
-       
-        CreatePath(locations);*/
 		
-		CreateRideNodes(screenwidth, screenheight);
+		
+		createPathNodes(screenwidth, screenheight);
+		
+		createPathFromEdges();
+
+
     }
-    
-    //create options menu
+   
+
+	//create options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_display_map, menu);
@@ -95,12 +101,12 @@ public class DisplayMap extends Activity {
     //This method creates the path nodes which will be connected for the shortest path algorithm
     public void CreatePathNodes()
     {
-    	pathMapNodes.add(new IntermediateMapNode(1015,2399));
-    	pathMapNodes.add(new IntermediateMapNode(1000,2072));
+    	pathMapNodes.add(new IntermediateMapNode(1015,2314));
+    	pathMapNodes.add(new IntermediateMapNode(1000,1899));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(0), pathMapNodes.get(1)));
-    	pathMapNodes.add(new IntermediateMapNode(1000,1777));
+    	pathMapNodes.add(new IntermediateMapNode(1000,1692));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(1), pathMapNodes.get(2)));
-    	pathMapNodes.add(new IntermediateMapNode(987,1604));
+    	pathMapNodes.add(new IntermediateMapNode(987,1519));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(2), pathMapNodes.get(3)));
     	pathMapNodes.add(new IntermediateMapNode(770,1324));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(4)));
@@ -125,51 +131,31 @@ public class DisplayMap extends Activity {
     	pathMapNodes.add(new IntermediateMapNode(1000,1399));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(13), pathMapNodes.get(14)));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(14)));    	
-    	pathMapNodes.add(new IntermediateMapNode(1289,1701));
+    	pathMapNodes.add(new IntermediateMapNode(1276,1604));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(15)));
-    	pathMapNodes.add(new IntermediateMapNode(1273,1846));
+    	pathMapNodes.add(new IntermediateMapNode(1280,1761));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(15), pathMapNodes.get(16)));
-    	pathMapNodes.add(new IntermediateMapNode(1280,2012));
+    	pathMapNodes.add(new IntermediateMapNode(1280,1902));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(16), pathMapNodes.get(17)));
-    	pathMapNodes.add(new IntermediateMapNode(1192,2003));
+    	pathMapNodes.add(new IntermediateMapNode(1141,1902));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(17), pathMapNodes.get(18)));
-    	pathMapEdges.add(new MapEdge(pathMapNodes.get(1), pathMapNodes.get(18)));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(18), pathMapNodes.get(1)));
     	
     }
     
     
-    public void AddPoint(int x, int y)
+    
+    public void createPathNodes(int width, int height)
     {
-    	Point p = new Point(x,y);
-    	locations.add(p);
+    	map.drawPathNode(pathMapNodes);
+    }
 
-    }
     
-    public void CreatePath(ArrayList<Point> l)
+    public void createPathFromEdges()
     {
-    	Path pa = new Path();
-    	pa.setLastPoint(l.get(0).x, l.get(0).y);
-    	l.remove(0);
-    	for (Point p : l)
-    	{  
-    		pa.lineTo(p.x, p.y);
-    		System.out.println("x = " + p.x + "		y = " + p.y);
-    	}
     	
-    	map.DrawPath(pa);
+    	map.DrawEdges(pathMapEdges);
     	
-    }
-    
-    public void CreateRideNodes(int width, int height)
-    {
-    	Path pa = new Path();
-    	
-    	for (Ride r : ListofRides.fullListofRides)
-    	{
-    		pa.addCircle((width) * r.mapX,height * r.mapY, 3, Path.Direction.CW);
-    	}
-    	
-    	map.DrawRides(pa);
     }
     
 
