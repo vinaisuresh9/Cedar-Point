@@ -19,7 +19,8 @@ public class DisplayMap extends Activity {
 	private ScrollView scroller;
 	private RelativeLayout layout;
 	private ArrayList<MapNode> ridesForUser; //Rides listed by user from ListofRides
-	private ArrayList<MapNode> PathMapNodes; //Arraylist for path nodes
+	public static ArrayList<MapNode> pathMapNodes; //Arraylist for path nodes
+	public static ArrayList<MapEdge> pathMapEdges;
 	private ArrayList<MapNode> fullMap;	
 	
 	private ArrayList<Point> locations;
@@ -38,10 +39,10 @@ public class DisplayMap extends Activity {
         
         
         ridesForUser = new ArrayList<MapNode>();
-        PathMapNodes = new ArrayList<MapNode>();
+        pathMapNodes = new ArrayList<MapNode>();
         locations = new ArrayList<Point>();
         CreatePathNodes();
-        fullMap = new ArrayList<MapNode>(PathMapNodes);
+        fullMap = new ArrayList<MapNode>(pathMapNodes);
         for (Ride r : ListofRides.fullListofRides)
         {
         	fullMap.add(new RideMapNode(r));
@@ -94,28 +95,46 @@ public class DisplayMap extends Activity {
     //This method creates the path nodes which will be connected for the shortest path algorithm
     public void CreatePathNodes()
     {
-    	PathMapNodes.add(new IntermediateMapNode(1015,2399));
-    	PathMapNodes.add(new IntermediateMapNode(1000,2072));
-    	PathMapNodes.add(new IntermediateMapNode(1000,1777));
-    	PathMapNodes.add(new IntermediateMapNode(987,1604));
-    	PathMapNodes.add(new IntermediateMapNode(770,1324));
-    	PathMapNodes.add(new IntermediateMapNode(600,1091));
-    	PathMapNodes.add(new IntermediateMapNode(506,893));
-    	PathMapNodes.add(new IntermediateMapNode(456,751));
-    	PathMapNodes.add(new IntermediateMapNode(641,629));
-    	PathMapNodes.add(new IntermediateMapNode(802,569));
-    	PathMapNodes.add(new IntermediateMapNode(912,742));
-    	PathMapNodes.add(new IntermediateMapNode(1028,949));
-    	PathMapNodes.add(new IntermediateMapNode(1009,1107));
-    	PathMapNodes.add(new IntermediateMapNode(993,1245));
-    	PathMapNodes.add(new IntermediateMapNode(1000,1399));
-    	PathMapNodes.add(new IntermediateMapNode(987,1604));
+    	pathMapNodes.add(new IntermediateMapNode(1015,2399));
+    	pathMapNodes.add(new IntermediateMapNode(1000,2072));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(0), pathMapNodes.get(1)));
+    	pathMapNodes.add(new IntermediateMapNode(1000,1777));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(1), pathMapNodes.get(2)));
+    	pathMapNodes.add(new IntermediateMapNode(987,1604));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(2), pathMapNodes.get(3)));
+    	pathMapNodes.add(new IntermediateMapNode(770,1324));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(4)));
+    	pathMapNodes.add(new IntermediateMapNode(600,1091));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(4), pathMapNodes.get(5)));
+    	pathMapNodes.add(new IntermediateMapNode(506,893));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(5), pathMapNodes.get(6)));
+    	pathMapNodes.add(new IntermediateMapNode(456,751));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(6), pathMapNodes.get(7)));
+    	pathMapNodes.add(new IntermediateMapNode(641,629));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(7), pathMapNodes.get(8)));
+    	pathMapNodes.add(new IntermediateMapNode(802,569));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(8), pathMapNodes.get(9)));
+    	pathMapNodes.add(new IntermediateMapNode(912,742));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(9), pathMapNodes.get(10)));
+    	pathMapNodes.add(new IntermediateMapNode(1028,949));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(10), pathMapNodes.get(11)));
+    	pathMapNodes.add(new IntermediateMapNode(1009,1107));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(11), pathMapNodes.get(12)));
+    	pathMapNodes.add(new IntermediateMapNode(993,1245));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(12), pathMapNodes.get(13)));
+    	pathMapNodes.add(new IntermediateMapNode(1000,1399));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(13), pathMapNodes.get(14)));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(14)));    	
+    	pathMapNodes.add(new IntermediateMapNode(1289,1701));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(3), pathMapNodes.get(15)));
+    	pathMapNodes.add(new IntermediateMapNode(1273,1846));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(15), pathMapNodes.get(16)));
+    	pathMapNodes.add(new IntermediateMapNode(1280,2012));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(16), pathMapNodes.get(17)));
+    	pathMapNodes.add(new IntermediateMapNode(1192,2003));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(17), pathMapNodes.get(18)));
+    	pathMapEdges.add(new MapEdge(pathMapNodes.get(1), pathMapNodes.get(18)));
     	
-    	
-    	PathMapNodes.add(new IntermediateMapNode(1289,1701));
-    	PathMapNodes.add(new IntermediateMapNode(1273,1846));
-    	PathMapNodes.add(new IntermediateMapNode(1280,2012));
-    	PathMapNodes.add(new IntermediateMapNode(1192,2003));
     }
     
     
