@@ -2,6 +2,7 @@ package com.cedar.app;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import android.content.*;
 import android.graphics.*;
@@ -27,8 +28,9 @@ public class MapCanvas extends View implements OnTouchListener {
 	int width;
 	Context c;
 	boolean pathdrawn;
-	ArrayList<MapNode> pathMapNodes = new ArrayList<MapNode>();
+	ArrayList<IntermediateMapNode> pathMapNodes = new ArrayList<IntermediateMapNode>();
 	private ArrayList<MapEdge> pathMapEdges = new ArrayList<MapEdge>();
+	private LinkedList<MapNode> ridesInOrder = new LinkedList<MapNode>();
 	
 	public MapCanvas(Context context, Bitmap map){
 		super(context);
@@ -73,25 +75,25 @@ public class MapCanvas extends View implements OnTouchListener {
 
 		Paint textPaint = new Paint();
 		textPaint.setColor(Color.WHITE);
-		textPaint.setTextSize(16f);
+		textPaint.setTextSize(25f);
 		textPaint.setTextAlign(Align.CENTER);
 		
 		Paint backPaint = new Paint();
 		backPaint.setColor(Color.BLACK);
 		backPaint.setTypeface(Typeface.DEFAULT_BOLD);
 		backPaint.setStrokeWidth(2f);
-		backPaint.setTextSize(16f);
+		backPaint.setTextSize(25f);
 		backPaint.setStyle(Paint.Style.STROKE);
 		backPaint.setTextAlign(Align.CENTER);
 		
 		
-		ArrayList<MapNode> nodes = pathMapNodes;
+		ArrayList<IntermediateMapNode> nodes = pathMapNodes;
 		ArrayList<MapEdge> edges = pathMapEdges;
 		
-		for (MapEdge edge : edges)
-		{
-			canvas.drawLine(width*edge.node1.x, height*edge.node1.y, width*edge.node2.x, height*edge.node2.y, n);
-		}
+//		for (MapEdge edge : edges)
+//		{
+//			canvas.drawLine(width*edge.node1.x, height*edge.node1.y, width*edge.node2.x, height*edge.node2.y, n);
+//		}
 		
 		for (MapNode node : nodes)
 		{
@@ -131,7 +133,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	}
 
 
-	public void drawPathNode(ArrayList<MapNode> pathMapNodes) {
+	public void drawPathNode(ArrayList<IntermediateMapNode> pathMapNodes) {
 		this.pathMapNodes = pathMapNodes;
 		invalidate();
 	}
@@ -154,6 +156,10 @@ public class MapCanvas extends View implements OnTouchListener {
 	        }
         }
         return true;
+	}
+
+	public void drawUserRoute(LinkedList<MapNode> ridesInOrder) {
+		this.ridesInOrder = ridesInOrder;		
 	}
 	
 

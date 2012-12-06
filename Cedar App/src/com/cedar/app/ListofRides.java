@@ -97,7 +97,7 @@ public class ListofRides extends Activity  {
 			
 			public void onClick(View v) {
 		    	Intent intent = new Intent(getApplicationContext(), DisplayMap.class);
-
+		    	
 		    	startActivity(intent);
 			}
 		});

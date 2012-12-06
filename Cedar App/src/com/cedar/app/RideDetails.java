@@ -52,9 +52,13 @@ public class RideDetails extends Activity {
         layout.setBackgroundColor(getResources().getColor(R.color.black));
         setContentView(layout);
         
-        YouTubeButton();
+        Intent intent = getIntent();
+    	ride = intent.getStringArrayExtra(ListofRides.RIDE);
         
+    	
+    	YouTubeButton();
         this.DetailsforRide();
+        
         
        
     }
@@ -88,7 +92,7 @@ public class RideDetails extends Activity {
 	    	lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 	    	b.setText("See Video!");
 	    	b.setTextSize(20);
-	    	b.setId(0);
+	    	b.setId(1);
 	    	b.setPadding(0, 50, 0, 0);
 	    	b.setBackgroundColor(Color.BLACK);
 	    	b.setTextColor(Color.WHITE);
@@ -109,8 +113,6 @@ public class RideDetails extends Activity {
     
     public void DetailsforRide()
     {
-    	Intent intent = getIntent();
-    	ride = intent.getStringArrayExtra(ListofRides.RIDE);
     	
     	RideType r;
     	
@@ -198,7 +200,7 @@ public class RideDetails extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		l.addRule(RelativeLayout.CENTER_IN_PARENT);
+		l.addRule(RelativeLayout.BELOW, 1);
 		
 		Display display = getWindowManager().getDefaultDisplay();
         int screenwidth = display.getWidth();
@@ -207,6 +209,8 @@ public class RideDetails extends Activity {
         //Make sure image does not scale past the top half of the screen
 		image.setLayoutParams(l);
 		image.setAdjustViewBounds(true);
+		image.setPadding(0, 20, 0, 0);
+		
 		//image.setMaxHeight(screenheight/2);
 		//image.setMaxWidth(screenwidth/2);
 		
