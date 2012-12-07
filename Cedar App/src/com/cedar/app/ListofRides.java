@@ -3,19 +3,11 @@ package com.cedar.app;
 import java.io.IOException;
 import java.util.*;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import com.cedar.app.Ride.RideSize;
-
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 import android.content.*;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 
 public class ListofRides extends Activity  {
@@ -100,6 +92,7 @@ public class ListofRides extends Activity  {
 		    		}
 		    	}
 		    	ridesList = new ArrayList<Ride>();
+
 			}
 		});
     	layout.addView(b);

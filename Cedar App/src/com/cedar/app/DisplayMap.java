@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.app.Activity;
-import android.content.*;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,18 +15,16 @@ import android.support.v4.app.NavUtils;
 
 public class DisplayMap extends Activity {
 	
-	private ScrollView scroller;
-	private RelativeLayout layout;
 	private ArrayList<MapNode> ridesForUser; //Rides listed by user from ListofRides
 	public static ArrayList<IntermediateMapNode> pathMapNodes; //Arraylist for path nodes
 	public static ArrayList<MapEdge> pathMapEdges;
 	private ArrayList<MapNode> fullMap;	
 	
-	private ArrayList<Point> locations;
+
 	
 	private MapCanvas map;
 	
-	private Path pa;
+
 	
 	int screenwidth;
 	int screenheight;
@@ -45,11 +41,9 @@ public class DisplayMap extends Activity {
         screenheight = display.getHeight();
         
         
-        pa = new Path();
         ridesForUser = new ArrayList<MapNode>();
         pathMapNodes = new ArrayList<IntermediateMapNode>();
         pathMapEdges = new ArrayList<MapEdge>();
-        locations = new ArrayList<Point>();
         CreatePathNodes();
         fullMap = new ArrayList<MapNode>(pathMapNodes);
         for (Ride r : ListofRides.fullListofRides)
@@ -71,10 +65,6 @@ public class DisplayMap extends Activity {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-
-		
-		
-		createPathNodes(screenwidth, screenheight);
 
         updateMapRoute();
 
@@ -151,13 +141,6 @@ public class DisplayMap extends Activity {
     	
     }
     
-    
-    
-    public void createPathNodes(int width, int height)
-    {
-    	map.drawPathNode(pathMapNodes);
-    }
-
     
     
 

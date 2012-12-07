@@ -17,8 +17,6 @@ import android.graphics.*;
 
 import java.io.*;
 
-import com.keyes.youtube.OpenYouTubePlayerActivity;
-
 public class RideDetails extends Activity {
 	RelativeLayout layout;
 	String duration;
@@ -210,7 +208,7 @@ public class RideDetails extends Activity {
 			l.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 			image.setPadding(0, 75, 0, 0);
 		}
-		
+	
 		Display display = getWindowManager().getDefaultDisplay();
         int screenwidth = display.getWidth();
         int screenheight = display.getHeight();
@@ -219,9 +217,6 @@ public class RideDetails extends Activity {
 		image.setLayoutParams(l);
 		image.setAdjustViewBounds(true);
 		
-		
-		//image.setMaxHeight(screenheight/2);
-		//image.setMaxWidth(screenwidth/2);
 		
 		//Grab image from the assets folder and load it into an imageview
 		InputStream is = getAssets().open("Thumbnails/" + name + ".jpg");

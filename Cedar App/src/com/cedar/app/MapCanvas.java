@@ -19,7 +19,6 @@ import android.view.*;
 
 public class MapCanvas extends View implements OnTouchListener {
 	InputStream is;
-	private Paint paint;
 	Bitmap b;
 	Path pathnodes;
 	Path ridenodes;
@@ -29,7 +28,6 @@ public class MapCanvas extends View implements OnTouchListener {
 	Context c;
 	boolean pathdrawn;
 	ArrayList<IntermediateMapNode> pathMapNodes = new ArrayList<IntermediateMapNode>();
-	private ArrayList<MapEdge> pathMapEdges = new ArrayList<MapEdge>();
 	private LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 	
 	public MapCanvas(Context context, Bitmap map){
@@ -85,17 +83,10 @@ public class MapCanvas extends View implements OnTouchListener {
 		backPaint.setTextSize(25f);
 		backPaint.setStyle(Paint.Style.STROKE);
 		backPaint.setTextAlign(Align.CENTER);
-		
-		
-/*		ArrayList<IntermediateMapNode> nodes = pathMapNodes;
-		
-		for (MapNode node : nodes)
-		{
-			canvas.drawCircle(width*node.x,height* node.y, 3, paint);
-		}*/
+
 		
 		for (Ride ride : ListofRides.fullListofRides)
-		{2
+		{
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
@@ -137,16 +128,6 @@ public class MapCanvas extends View implements OnTouchListener {
 		
 	}
 
-
-	public void drawPathNode(ArrayList<IntermediateMapNode> pathMapNodes) {
-		this.pathMapNodes = pathMapNodes;
-		invalidate();
-	}
-
-	public void DrawEdges(ArrayList<MapEdge> pathMapEdges) {
-
-		this.pathMapEdges = pathMapEdges;
-	}
 
 	public boolean onTouch(View v, MotionEvent event) {
 		final int action = event.getAction();
