@@ -12,7 +12,7 @@ import org.xml.sax.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Ride implements Parcelable {
+public class Ride   {
 	
 	public String name;
 	public String ridetype;
@@ -145,54 +145,6 @@ public class Ride implements Parcelable {
 			  }
 	}
 
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	public void writeToParcel(Parcel out, int flags) {
-		// TODO Auto-generated method stub
-		out.writeString(name);
-		out.writeString(ridetype);
-		out.writeString(description);
-		out.writeString(duration);
-		out.writeString(heightreq);
-		out.writeString(speed);
-		
-		out.writeFloat(mapX);
-		out.writeFloat(mapY);
-		
-		out.writeString((size == null) ? "" : size.name());
-	}
-	
-	public static final Parcelable.Creator<Ride> CREATOR
-    = new Parcelable.Creator<Ride>() {
-		public Ride createFromParcel(Parcel in) {
-			return new Ride(in);
-		}
-
-		public Ride[] newArray(int size) {
-			return new Ride[size];
-		}
-	};
-	
-	private Ride(Parcel in) {
-        name = in.readString();
-        ridetype = in.readString();
-        description = in.readString();
-        duration = in.readString();
-        heightreq = in.readString();
-        speed = in.readString();
-        
-        mapX = in.readFloat();
-        mapY = in.readFloat();
-        
-        try {
-            size = RideSize.valueOf(in.readString());
-        } catch (IllegalArgumentException x) {
-            size = null;
-        }
-        
-    }
 				
 }

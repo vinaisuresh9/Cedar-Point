@@ -32,6 +32,10 @@ public class RideDetails extends Activity {
 	
 	public static final String Video = "com.cedar.app.video";
 
+	
+	/* (non-Javadoc)
+     * @see android.app.Activity#onCreate(android.os.Bundle)
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

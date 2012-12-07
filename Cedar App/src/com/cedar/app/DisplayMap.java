@@ -13,16 +13,27 @@ import android.widget.*;
 import android.graphics.*;
 import android.support.v4.app.NavUtils;
 
+
+
+/**
+ * @author Vinai Suresh
+ *@param Bundle for Creation of Activity
+ *DisplayMap
+ *Class displays Map and handles routing of the rides created in ListofRides
+ */
+
+
 public class DisplayMap extends Activity {
 	
 	private ArrayList<MapNode> ridesForUser; //Rides listed by user from ListofRides
 	public static ArrayList<IntermediateMapNode> pathMapNodes; //Arraylist for path nodes
-	public static ArrayList<MapEdge> pathMapEdges;
-	private ArrayList<MapNode> fullMap;	
+	public static ArrayList<MapEdge> pathMapEdges; //Arraylist for map edges
+	private ArrayList<MapNode> fullMap;	 //ArrayList for all nodes in the map including rides and
+	//the path
 	
 
 	
-	private MapCanvas map;
+	private MapCanvas map; //Map creation using custom view class
 	
 
 	
@@ -31,32 +42,42 @@ public class DisplayMap extends Activity {
 	
 	LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 
+	
+	/* (non-Javadoc)
+     * @see android.app.Activity#onCreate(android.os.Bundle)
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Get height and width of screen
         
+        //Get screen width and height
         Display display = getWindowManager().getDefaultDisplay();
         screenwidth = display.getWidth();
         screenheight = display.getHeight();
         
-        
+        //Initialize arraylists
         ridesForUser = new ArrayList<MapNode>();
         pathMapNodes = new ArrayList<IntermediateMapNode>();
         pathMapEdges = new ArrayList<MapEdge>();
+        //Method to create Path Nodes on map by location on screen
         CreatePathNodes();
+        
         fullMap = new ArrayList<MapNode>(pathMapNodes);
         for (Ride r : ListofRides.fullListofRides)
         {
+        	//Add all of the ridenodes and pathnodes to the full map
         	fullMap.add(new RideMapNode(r));
         }
         for (Ride r : ListofRides.ridesList)
         {
+        	//create ride nodes for the user
         	ridesForUser.add(new RideMapNode(r));
         }
        
         
-
+        //Create the custom view using the cedar point map from the assets folder for
+        //custom drawing 
 		Bitmap b;
 		try {
 			b = BitmapFactory.decodeStream(getAssets().open("cedarpointmap.png"));
@@ -65,13 +86,17 @@ public class DisplayMap extends Activity {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-
+		
+		//Method for updating the Map route with the new rides
         updateMapRoute();
 
     }
    
 
 	//create options menu
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_display_map, menu);
@@ -79,6 +104,9 @@ public class DisplayMap extends Activity {
     }
 
     //when items are selected
+    /* (non-Javadoc)
+     * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -89,14 +117,30 @@ public class DisplayMap extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
+    
+    /**
+     * @author Thomas Li
+     *@param None
+     *@return Nothing
+     *This map calls a new RidePath Object that generates a list of nodes that a user must visit
+     *to reach all nodes on their list. It returns nothing but sends the list of nodes to the
+     *MapCanvas class to be drawn
+     */
     public void updateMapRoute()
     {
     	ridesInOrder = RidePath.GetOptimalPathNodes(ListofRides.ridesList, pathMapNodes);
-    	System.out.println(ridesInOrder.size());
     	map.drawUserRoute(ridesInOrder);
     }
     
-    //This method creates the path nodes which will be connected for the shortest path algorithm
+    
+    
+    /**
+     * @author Eric Mellino
+     * @param None
+     * @return None
+     * Creates the Custom Path through the park by adding IntermediateMapNodes and
+     * MapEdges between these Nodes to create a graph
+     */
     public void CreatePathNodes()
     {
     	pathMapNodes.add(new IntermediateMapNode(1015,2314, ListofRides.getRide("Ocean Motion")));

@@ -17,26 +17,27 @@ import android.view.View;
 import android.view.View.*;
 import android.view.*;
 
+/**
+ * @author Eric Mellino
+ * MapCanvas creates a custom view with the map as the background and allows custom drawing on the map for route information and ride information
+ *
+ */
 public class MapCanvas extends View implements OnTouchListener {
-	InputStream is;
 	Bitmap b;
-	Path pathnodes;
-	Path ridenodes;
-	Path pathing;
 	int height;
 	int width;
 	Context c;
-	boolean pathdrawn;
 	ArrayList<IntermediateMapNode> pathMapNodes = new ArrayList<IntermediateMapNode>();
 	private LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 	
+	/**
+	 * @param Context context
+	 * @param Bitmap map
+	 * Constructor
+	 */
 	public MapCanvas(Context context, Bitmap map){
 		super(context);
 		c = context;
-		pathnodes = new Path();
-		ridenodes = new Path();
-		pathing = new Path();
-		pathdrawn = false;
 		
 		setOnTouchListener(this);
 		
@@ -46,24 +47,30 @@ public class MapCanvas extends View implements OnTouchListener {
 		height = display.getHeight();
 		width = display.getWidth();
 		
+		//Calculate the statusbarheight per device so that we can subtract it from the map scale
 		int statusBarHeight = (int)Math.ceil(25 * getContext().getResources().getDisplayMetrics().density);
 		
 		b = Bitmap.createScaledBitmap(map, width, height - statusBarHeight, true);	
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see android.view.View#onDraw(android.graphics.Canvas)
+	 */
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		
 		canvas.drawBitmap(b, 0,0, null);
 		
+		//Black paint
     	Paint paint = new Paint();
 		paint.setColor(Color.BLACK);
 		paint.setStyle(Paint.Style.STROKE);
 		paint.setStrokeWidth(5);
 		paint.setAntiAlias(true);
 		
+		//Red paint
 		Paint n = new Paint();
 		n.setColor(Color.RED);
 		n.setStyle(Paint.Style.STROKE);
@@ -71,11 +78,13 @@ public class MapCanvas extends View implements OnTouchListener {
 		n.setAntiAlias(true);
 		n.setStrokeCap(Cap.ROUND);
 
+		//white paint
 		Paint textPaint = new Paint();
 		textPaint.setColor(Color.WHITE);
 		textPaint.setTextSize(25f);
 		textPaint.setTextAlign(Align.CENTER);
 		
+		//Black paint for ride text
 		Paint backPaint = new Paint();
 		backPaint.setColor(Color.BLACK);
 		backPaint.setTypeface(Typeface.DEFAULT_BOLD);
@@ -85,16 +94,19 @@ public class MapCanvas extends View implements OnTouchListener {
 		backPaint.setTextAlign(Align.CENTER);
 
 		
+		//Display all of the rides with their names
 		for (Ride ride : ListofRides.fullListofRides)
 		{
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
 		
+		//Display route when ridesList is populated
 		for (int g = 0; g < ridesInOrder.size()-1; g++)
 		{
 			canvas.drawLine(ridesInOrder.get(g).x * width, ridesInOrder.get(g).y * height, ridesInOrder.get(g+1).x * width, ridesInOrder.get(g+1).y * height, n);
 		}
+		//Draw nodes that contain the rides that the user wants to visit
 		for (IntermediateMapNode mn : RidePath.needToVisit)
 		{
 			canvas.drawCircle(width*mn.x,height* mn.y, 3, paint);
@@ -105,6 +117,11 @@ public class MapCanvas extends View implements OnTouchListener {
 	}
 	
 	
+	/**
+	 * @param float x
+	 * @param float y
+	 * Check to see if user pressed near one of the ride names then goes to that description
+	 */
 	void buttonPressedAt(float x, float y)
 	{
 		for (Ride r : ListofRides.fullListofRides)
@@ -117,6 +134,10 @@ public class MapCanvas extends View implements OnTouchListener {
 		}
 	}
 	
+	/**
+	 * @param Ride r
+	 * Load the description of the Ride pressed
+	 */
 	private void showRideInfo(Ride r) {
 		Intent intent = new Intent(c, RideDetails.class);
 		String[] array = {r.name, r.ridetype, r.duration, r.heightreq,
@@ -129,6 +150,9 @@ public class MapCanvas extends View implements OnTouchListener {
 	}
 
 
+	/* (non-Javadoc)
+	 * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
+	 */
 	public boolean onTouch(View v, MotionEvent event) {
 		final int action = event.getAction();
         switch (action & MotionEvent.ACTION_MASK) 
@@ -144,6 +168,10 @@ public class MapCanvas extends View implements OnTouchListener {
         return true;
 	}
 
+	/**
+	 * @param LinkedList<IntermediateMapNode> ridesInOrder
+	 * Sets rides that user wants to visit for drawing route
+	 */
 	public void drawUserRoute(LinkedList<IntermediateMapNode> ridesInOrder) {
 		this.ridesInOrder = ridesInOrder;
 		invalidate();
