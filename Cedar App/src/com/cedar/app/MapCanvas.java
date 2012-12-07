@@ -108,7 +108,7 @@ public class MapCanvas extends View implements OnTouchListener {
 		
 		for (int g = 0; g < ridesInOrder.size()-1; g++)
 		{
-			canvas.drawLine(ridesInOrder.get(g).x * width, ridesInOrder.get(g).y * height, ridesInOrder.get(g+1).x * width, ridesInOrder.get(g+1).y * height, paint);
+			canvas.drawLine(ridesInOrder.get(g).x * width, ridesInOrder.get(g).y * height, ridesInOrder.get(g+1).x * width, ridesInOrder.get(g+1).y * height, n);
 		}
 		invalidate();
 	}

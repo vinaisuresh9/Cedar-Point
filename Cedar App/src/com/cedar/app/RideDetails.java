@@ -162,6 +162,7 @@ public class RideDetails extends Activity {
 		lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 		lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
 		tv.setLayoutParams(lp);
+		tv.setId(2);
 		tv.setPadding(0, 0, 0, 20);
 		tv.setTextColor(getResources().getColor(R.color.white));
 		tv.setText("Name:	" + name + "\nDuration: 	" + duration +
@@ -185,6 +186,7 @@ public class RideDetails extends Activity {
 		lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
 		tv.setPadding(0, 0, 0, 20);
 		tv.setLayoutParams(lp);
+		tv.setId(2);
 		tv.setTextColor(getResources().getColor(R.color.white));
 		tv.setText("Name:	" + name + "\nHeight Requirement:	" + heightreq + "\n" +
 					description);
@@ -200,7 +202,16 @@ public class RideDetails extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		l.addRule(RelativeLayout.BELOW, 1);
+		if (!ride[6].isEmpty())
+		{
+			l.addRule(RelativeLayout.BELOW, 1);
+			image.setPadding(0, 20, 0, 0);
+		}
+		else
+		{
+			l.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+			image.setPadding(0, 50, 0, 0);
+		}
 		
 		Display display = getWindowManager().getDefaultDisplay();
         int screenwidth = display.getWidth();
@@ -209,7 +220,7 @@ public class RideDetails extends Activity {
         //Make sure image does not scale past the top half of the screen
 		image.setLayoutParams(l);
 		image.setAdjustViewBounds(true);
-		image.setPadding(0, 20, 0, 0);
+		
 		
 		//image.setMaxHeight(screenheight/2);
 		//image.setMaxWidth(screenwidth/2);

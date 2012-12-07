@@ -61,7 +61,7 @@ public class RidePath
 				rideNodesInOrder.add(pathNodes.get(3));
 			}
 			
-			if (needsToVisit(rightSubsection))
+			if (needsToVisit(rightFork))
 			{
 				if (needsToVisit(pathNodes.get(9)))
 				{

@@ -26,6 +26,7 @@ public class ListofRides extends Activity  {
 	public static ArrayList<Ride> fullListofRides;
 	public final static String RIDE = "com.cedar.app.ride";
 	public final static String LISTOFRIDES = "com.cedar.app.list";
+	public LinkedList<EnhancedCheckBox> allChecks = new LinkedList<EnhancedCheckBox>();
 	
 	private static ListofRides instance;
 	
@@ -63,9 +64,9 @@ public class ListofRides extends Activity  {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		}
-        
+
+        CreateClearButton();
         CreateScreen();
-        
         CreateMapButton();
         
         scroller.addView(layout);
@@ -74,7 +75,38 @@ public class ListofRides extends Activity  {
         
     }
 
-    @Override
+    private void CreateClearButton() {
+    	Button b = new Button(this);
+    	RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+    	lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+    	b.setId(62);
+    	b.setText("Clear all rides");
+    	b.setTextSize(25);
+    	b.setPadding(0, 20, 0, 20);
+    	b.setBackgroundColor(Color.BLACK);
+    	b.setTextColor(Color.WHITE);
+    	b.setLayoutParams(lp);
+
+    	b.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+		    	if (!allChecks.isEmpty())
+		    	{
+		    		for (EnhancedCheckBox e : allChecks)
+		    		{
+		    			e.setChecked(false);
+		    		}
+		    	}
+		    	ridesList = new ArrayList<Ride>();
+			}
+		});
+    	layout.addView(b);
+		
+	}
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_listof_rides, menu);
         return true;
@@ -90,7 +122,9 @@ public class ListofRides extends Activity  {
     	
     	b.setId(61);
     	b.setText("View Map");
+    	b.setTextSize(25);
     	b.setTextColor(getResources().getColor(R.color.white));
+    	b.setBackgroundColor(Color.BLACK);
     	lp.addRule(RelativeLayout.BELOW, 60);
     	b.setLayoutParams(lp);
     	b.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +172,7 @@ public class ListofRides extends Activity  {
        		 layout.addView(tv);
        		 
        		 EnhancedCheckBox e = CreateCheckBox(r, lastid + 30);
+         	allChecks.add(e);
        		 
        		 e.setOnClickListener(new View.OnClickListener() {
 				
@@ -174,21 +209,9 @@ public class ListofRides extends Activity  {
 		}
 		else
 		{
-			lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+			lp.addRule(RelativeLayout.BELOW, 62);
 		}
 		tv.setLayoutParams(lp);
-	  /* XmlResourceParser xpp=Resources.getSystem().getXml 
-	    		(R.color.textfieldcolors); 
-	   try {
-		ColorStateList csl = ColorStateList.createFromXml(getResources(), xpp);
-		   tv.setTextColor(csl);
-	} catch (XmlPullParserException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} 	*/	
 		tv.setTextColor(Color.WHITE);
 		tv.setText(r.name);
 		tv.setId(id);

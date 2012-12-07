@@ -75,8 +75,6 @@ public class DisplayMap extends Activity {
 		
 		
 		createPathNodes(screenwidth, screenheight);
-//		
-//		createPathFromEdges();
 
         updateMapRoute();
 
@@ -105,11 +103,6 @@ public class DisplayMap extends Activity {
     {
     	ridesInOrder = RidePath.GetOptimalPathNodes(ListofRides.ridesList, pathMapNodes);
     	System.out.println(ridesInOrder.size());
-    	for (MapNode node : ridesInOrder)
-    	{
-    		System.out.println(node.accessibleRides.getFirst().name);
-    		
-    	}
     	map.drawUserRoute(ridesInOrder);
     }
     
@@ -166,12 +159,6 @@ public class DisplayMap extends Activity {
     }
 
     
-    public void createPathFromEdges()
-    {
-    	
-    	map.DrawEdges(pathMapEdges);
-    	
-    }
     
 
 }
