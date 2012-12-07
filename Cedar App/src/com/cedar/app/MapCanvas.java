@@ -31,6 +31,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	private LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 	
 	/**
+	 * @author Vinai Suresh
 	 * @param Context context
 	 * @param Bitmap map
 	 * Constructor
@@ -118,6 +119,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	
 	
 	/**
+	 * @author Aaron Noviski
 	 * @param float x
 	 * @param float y
 	 * Check to see if user pressed near one of the ride names then goes to that description
@@ -135,6 +137,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	}
 	
 	/**
+	 * @author Aaron Noviski
 	 * @param Ride r
 	 * Load the description of the Ride pressed
 	 */
@@ -169,6 +172,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	}
 
 	/**
+	 * @author Aaron Noviski
 	 * @param LinkedList<IntermediateMapNode> ridesInOrder
 	 * Sets rides that user wants to visit for drawing route
 	 */

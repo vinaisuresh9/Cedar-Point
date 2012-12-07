@@ -12,6 +12,11 @@ import org.xml.sax.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * @author Vinai Suresh
+ * Creates Ride object from xml files
+ *
+ */
 public class Ride   {
 	
 	public String name;
@@ -52,6 +57,12 @@ public class Ride   {
 	
 	}
 	
+	/**
+	 * @author Eric Mellino
+	 * @param InputStream path
+	 * @return Ride toReturn
+	 * Deserialize Ride attributes from xml files. Input the stream from the assets folder. Return ride
+	 */
 	public static Ride DeserializeFromXML(InputStream path)
 	{
 		Ride toReturn = new Ride();
@@ -68,6 +79,7 @@ public class Ride   {
             
             Element doc = dom.getDocumentElement();
            
+            //Set the object variables to the variables from the xml files
             toReturn.name = doc.getAttribute("name");
             toReturn.ridetype = doc.getAttribute("ridetype");
             toReturn.duration = doc.getAttribute("duration");
@@ -96,6 +108,16 @@ public class Ride   {
 	
 	
 	//Generate the Ride Xml Files
+	/**
+	 * @author Thomas Li
+	 * @param Ride r
+	 * @param float x
+	 * @param float y
+	 * @param RideSize s
+	 * @param String filePath
+	 * @throws FileNotFoundException
+	 * Serialize the Ride objects to XML. For initial creation of xml files
+	 */
 	public static void SerializeToXML(Ride r, Float x, Float y, RideSize s, String filePath) throws FileNotFoundException
 	{
 		 try {
@@ -125,6 +147,7 @@ public class Ride   {
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				DOMSource source = new DOMSource(doc);
+				//For debugging purposes print to system.out
 				//StreamResult result = new StreamResult(new FileOutputStream(filePath));
 				
 				

@@ -1,5 +1,10 @@
 package com.cedar.app;
 
+
+/**
+ * @author Eric Mellino
+ * MapNode for rides
+ */
 public class RideMapNode extends MapNode {
 	
 	public Ride ride;

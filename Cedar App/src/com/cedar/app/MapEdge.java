@@ -1,6 +1,11 @@
 package com.cedar.app;
 
-// Represents an edge in the map connecting two nodes.
+
+/**
+ * @author Eric Mellino
+ * Create MapEdge between two MapNodes
+ *
+ */
 public class MapEdge {
 	public MapNode node1;
 	public MapNode node2;

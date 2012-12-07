@@ -2,6 +2,13 @@ package com.cedar.app;
 
 import java.util.*;
 
+
+
+/**
+ * @author Thomas Li
+ * Old Dijkstra algorithm we were going to use
+ *
+ */
 public class ShortestPath {
 	private final List<MapNode> nodes;
 	private final List<MapEdge> MapEdges;

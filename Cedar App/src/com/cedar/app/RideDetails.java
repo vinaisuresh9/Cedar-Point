@@ -17,6 +17,12 @@ import android.graphics.*;
 
 import java.io.*;
 
+
+/**
+ * @author Thomas Li
+ * RideDetails is an Activity that displays the details about a ride that the user selects
+ *
+ */
 public class RideDetails extends Activity {
 	RelativeLayout layout;
 	String duration;
@@ -30,7 +36,6 @@ public class RideDetails extends Activity {
 	TextView textView;
 	ImageView imageView;
 	
-	public static final String Video = "com.cedar.app.video";
 
 	
 	/* (non-Javadoc)
@@ -54,17 +59,22 @@ public class RideDetails extends Activity {
         layout.setBackgroundColor(getResources().getColor(R.color.black));
         setContentView(layout);
         
+        //Grab the ride details from the string array passed in from ListofRides
         Intent intent = getIntent();
     	ride = intent.getStringArrayExtra(ListofRides.RIDE);
         
-    	
+    	//Create button for link to Youtube
     	YouTubeButton();
+    	//Create the rest of the details
         this.DetailsforRide();
         
         
        
     }
 
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_ride_details, menu);
@@ -72,6 +82,9 @@ public class RideDetails extends Activity {
     }
 
     
+    /* (non-Javadoc)
+     * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -82,8 +95,13 @@ public class RideDetails extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
+    /**
+     * @author Vinai Suresh
+     * Create the youtube button that links to the youtube app 
+     */
     public void YouTubeButton()
     {
+    	//Check to see if the video attribute is empty for a ride
     	if (!ride[6].isEmpty())
     	{
 	    	Button b = new Button(this);
@@ -101,8 +119,12 @@ public class RideDetails extends Activity {
 	    	b.setLayoutParams(lp);
 	    	b.setOnClickListener(new View.OnClickListener() {
 				
+				/* (non-Javadoc)
+				 * @see android.view.View.OnClickListener#onClick(android.view.View)
+				 */
 				public void onClick(View v) {
 					
+					//Call the youtube app up with the video link for this ride
 					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(ride[6])));
 				}
 			});
@@ -111,17 +133,23 @@ public class RideDetails extends Activity {
     	}
     }
     
+    /**
+     * @author Thomas Li
+     * Create the Details (the ImageView and TextView) for the ride. 
+     */
     public void DetailsforRide()
     {
     	
     	RideType r;
     	
+    	//Checks to see type of ride
     	if (ride[1].equals("Roller Coaster"))
     		r = RideType.RollerCoaster;
     	else
     		r = RideType.ThrillRide;
     	
     	
+    	//Create different textviews based on ridetype
     	switch(r)
     	{
     	case RollerCoaster:
@@ -151,7 +179,15 @@ public class RideDetails extends Activity {
     	}
     }
     
-    //TextView creation for roller coasters which have duration and speed statistics
+    /**
+     * @param String name
+     * @param String duration
+     * @param String heightreq
+     * @param String speed
+     * @param String description
+     * @return TextView tv
+     * TextView creation for roller coasters which have duration and speed statistics. Takes in parameters that will be displayed the returns the textview for adding to layout
+     */
     public TextView CreateTextView(String name, String duration, String heightreq, String speed, String description)
 
     {
@@ -174,7 +210,14 @@ public class RideDetails extends Activity {
     
     
  
-    //TextView creation for thrillrides, which do not have duration and speed statistics
+
+    /**
+     * @param String name
+     * @param String heightreq
+     * @param String description
+     * @return TextView tv
+     * TextView creation for thrillrides, which do not have duration and speed statistics. 
+     */
     public TextView CreateTextView(String name, String heightreq, String description)
     {
     	TextView tv = new TextView(this);
@@ -195,6 +238,14 @@ public class RideDetails extends Activity {
     
     
     //Create imageview for the picture of each ride dynamically from the Assets Folder
+    /**
+     * @author Aaron Noviski
+     * @param String name
+     * @return ImageView image
+     * @throws IOException
+     * CreateImageView for the ride image. Load from the assets folder and throw an IOException if the file is not found. 
+     * Take in the Ride name as a parameter and returns the ImageView
+     */
     public ImageView CreateImageView (String name) throws IOException
     {
     	ImageView image = new ImageView(this);
@@ -202,6 +253,7 @@ public class RideDetails extends Activity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
 		l.addRule(RelativeLayout.CENTER_HORIZONTAL);
+		//Check to see if it had a youtube link
 		if (!ride[6].isEmpty())
 		{
 			l.addRule(RelativeLayout.BELOW, 1);
@@ -213,11 +265,12 @@ public class RideDetails extends Activity {
 			image.setPadding(0, 75, 0, 0);
 		}
 	
+		//Get screen width and  height
 		Display display = getWindowManager().getDefaultDisplay();
         int screenwidth = display.getWidth();
         int screenheight = display.getHeight();
 		
-        //Make sure image does not scale past the top half of the screen
+        //Make sure image does not scale past the right side of the screen
 		image.setLayoutParams(l);
 		image.setAdjustViewBounds(true);
 		
@@ -230,6 +283,11 @@ public class RideDetails extends Activity {
 		return image;
     }
     
+    /**
+     * @author Vinai Suresh
+     * Enum for ridetype
+     *
+     */
     public enum RideType
     {
     	RollerCoaster,ThrillRide
