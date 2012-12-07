@@ -95,7 +95,7 @@ public class MapCanvas extends View implements OnTouchListener {
 		}*/
 		
 		for (Ride ride : ListofRides.fullListofRides)
-		{2
+		{
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
