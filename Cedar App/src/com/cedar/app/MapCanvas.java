@@ -30,7 +30,7 @@ public class MapCanvas extends View implements OnTouchListener {
 	boolean pathdrawn;
 	ArrayList<IntermediateMapNode> pathMapNodes = new ArrayList<IntermediateMapNode>();
 	private ArrayList<MapEdge> pathMapEdges = new ArrayList<MapEdge>();
-	private LinkedList<MapNode> ridesInOrder = new LinkedList<MapNode>();
+	private LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 	
 	public MapCanvas(Context context, Bitmap map){
 		super(context);
@@ -105,6 +105,11 @@ public class MapCanvas extends View implements OnTouchListener {
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
+		
+		for (int g = 0; g < ridesInOrder.size()-1; g++)
+		{
+			canvas.drawLine(ridesInOrder.get(g).x * width, ridesInOrder.get(g).y * height, ridesInOrder.get(g+1).x * width, ridesInOrder.get(g+1).y * height, paint);
+		}
 		invalidate();
 	}
 	
@@ -158,8 +163,9 @@ public class MapCanvas extends View implements OnTouchListener {
         return true;
 	}
 
-	public void drawUserRoute(LinkedList<MapNode> ridesInOrder) {
-		this.ridesInOrder = ridesInOrder;		
+	public void drawUserRoute(LinkedList<IntermediateMapNode> ridesInOrder) {
+		this.ridesInOrder = ridesInOrder;
+		invalidate();
 	}
 	
 

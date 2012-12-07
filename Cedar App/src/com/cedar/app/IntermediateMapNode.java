@@ -13,6 +13,7 @@ public class IntermediateMapNode extends MapNode {
 		for (Ride r : rides)
 		{
 			accessibleRides.add(r);
+			System.out.println("This node can access "+r.name);
 		}
 	}
 	

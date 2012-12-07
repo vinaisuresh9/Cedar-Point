@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class RidePath 
 {	
 	private ArrayList<Ride> selectedRides;	
-	public LinkedList<MapNode> rideNodesInOrder;
+	public LinkedList<IntermediateMapNode> rideNodesInOrder;
 	public ArrayList<Ride> allRides;
 	static String[] rightSubsection = { "MaXair", "Wicked Twister", "Woodstock Express", "WindSeeker", "Calypso" };
 	static String[] leftFork = { "Iron Dragon", "Millenium Force", "Mantis", "Cedar Creek Mine Ride", "Skyhawk", "Wave Swinger", "Maverick" };
@@ -16,9 +16,11 @@ public class RidePath
 	public RidePath(ArrayList<Ride> selectedRides, ArrayList<IntermediateMapNode> pathNodes)
 	{
 		allRides = ListofRides.fullListofRides;
-		rideNodesInOrder =  new LinkedList<MapNode>();
+		rideNodesInOrder =  new LinkedList<IntermediateMapNode>();
 		this.selectedRides = selectedRides;
 		ArrayList<IntermediateMapNode> needToVisit = new ArrayList<IntermediateMapNode>();
+		System.out.println("You have " + selectedRides.size() + " selected rides.");
+		System.out.println("There are " +pathNodes.size() + " path nodes.");
 		for (Ride ride : selectedRides)
 		{
 			for (IntermediateMapNode node : pathNodes)
@@ -32,13 +34,14 @@ public class RidePath
 				}
 			}
 		}
-		
+		System.out.println("You need to visit "+needToVisit.size() + " nodes.");
 		if (needToVisit.size() == 0) return;
 		rideNodesInOrder.add(pathNodes.get(0));
 		rideNodesInOrder.add(pathNodes.get(1));
 		
 		if (needsToVisit(leftFork) || needsToVisit(rightFork))
 		{
+			System.out.println("You need to visit the top area.");
 			if (needsToVisit(rightSubsection))
 			{
 				rideNodesInOrder.add(pathNodes.get(18));
@@ -338,7 +341,7 @@ public class RidePath
 	}
 	
 	
-	public static LinkedList<MapNode> GetOptimalPathNodes(ArrayList<Ride> rides, ArrayList<IntermediateMapNode> pathNodes)
+	public static LinkedList<IntermediateMapNode> GetOptimalPathNodes(ArrayList<Ride> rides, ArrayList<IntermediateMapNode> pathNodes)
 	{
 		return new RidePath(rides, pathNodes).rideNodesInOrder;
 	}

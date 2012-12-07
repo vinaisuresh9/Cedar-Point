@@ -33,7 +33,7 @@ public class DisplayMap extends Activity {
 	int screenwidth;
 	int screenheight;
 	
-	LinkedList<MapNode> ridesInOrder = new LinkedList<MapNode>();
+	LinkedList<IntermediateMapNode> ridesInOrder = new LinkedList<IntermediateMapNode>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -104,6 +104,12 @@ public class DisplayMap extends Activity {
     public void updateMapRoute()
     {
     	ridesInOrder = RidePath.GetOptimalPathNodes(ListofRides.ridesList, pathMapNodes);
+    	System.out.println(ridesInOrder.size());
+    	for (MapNode node : ridesInOrder)
+    	{
+    		System.out.println(node.accessibleRides.getFirst().name);
+    		
+    	}
     	map.drawUserRoute(ridesInOrder);
     }
     
@@ -129,7 +135,7 @@ public class DisplayMap extends Activity {
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(7), pathMapNodes.get(8)));
     	pathMapNodes.add(new IntermediateMapNode(802,569, ListofRides.getRide("Mean Streak"), ListofRides.getRide("Super Himalaya")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(8), pathMapNodes.get(9)));
-    	pathMapNodes.add(new IntermediateMapNode(912,742, ListofRides.getRide("Scrambler"), ListofRides.getRide("Junior Gemini"), ListofRides.getRide("Monster"), ListofRides.getRide("Gemini")));
+    	pathMapNodes.add(new IntermediateMapNode(912,742, ListofRides.getRide("Scrambler"), ListofRides.getRide("Jr. Gemini"), ListofRides.getRide("Monster"), ListofRides.getRide("Gemini")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(9), pathMapNodes.get(10)));
     	pathMapNodes.add(new IntermediateMapNode(1028,949, ListofRides.getRide("Matterhorn"), ListofRides.getRide("Magnum XL-200")));
     	pathMapEdges.add(new MapEdge(pathMapNodes.get(10), pathMapNodes.get(11)));

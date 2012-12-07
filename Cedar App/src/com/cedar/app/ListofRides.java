@@ -225,7 +225,7 @@ public class ListofRides extends Activity  {
 	public static Ride getRide(String string) {
 		for (Ride r : fullListofRides)
 		{
-			if (r.name == string)
+			if (r.name.equals(string))
 				return r;
 		}
 		return null;
