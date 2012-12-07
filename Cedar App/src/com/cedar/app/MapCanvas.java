@@ -87,21 +87,15 @@ public class MapCanvas extends View implements OnTouchListener {
 		backPaint.setTextAlign(Align.CENTER);
 		
 		
-		ArrayList<IntermediateMapNode> nodes = pathMapNodes;
-		ArrayList<MapEdge> edges = pathMapEdges;
-		
-//		for (MapEdge edge : edges)
-//		{
-//			canvas.drawLine(width*edge.node1.x, height*edge.node1.y, width*edge.node2.x, height*edge.node2.y, n);
-//		}
+/*		ArrayList<IntermediateMapNode> nodes = pathMapNodes;
 		
 		for (MapNode node : nodes)
 		{
 			canvas.drawCircle(width*node.x,height* node.y, 3, paint);
-		}
+		}*/
 		
 		for (Ride ride : ListofRides.fullListofRides)
-		{
+		{2
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, backPaint);
 			canvas.drawText(ride.name, ride.mapX * width, ride.mapY * height, textPaint);		
 		}
@@ -110,6 +104,12 @@ public class MapCanvas extends View implements OnTouchListener {
 		{
 			canvas.drawLine(ridesInOrder.get(g).x * width, ridesInOrder.get(g).y * height, ridesInOrder.get(g+1).x * width, ridesInOrder.get(g+1).y * height, n);
 		}
+		for (IntermediateMapNode mn : RidePath.needToVisit)
+		{
+			canvas.drawCircle(width*mn.x,height* mn.y, 3, paint);
+		}
+		
+		
 		invalidate();
 	}
 	

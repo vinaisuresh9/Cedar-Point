@@ -100,8 +100,6 @@ public class RideDetails extends Activity {
 	    	b.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View v) {
-					/*Intent intent = new Intent(null, Uri.parse("ytpl://" + ride[6]), getApplicationContext(), OpenYouTubePlayerActivity.class);
-					startActivity(intent);*/
 					
 					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(ride[6])));
 				}
@@ -210,7 +208,7 @@ public class RideDetails extends Activity {
 		else
 		{
 			l.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-			image.setPadding(0, 50, 0, 0);
+			image.setPadding(0, 75, 0, 0);
 		}
 		
 		Display display = getWindowManager().getDefaultDisplay();

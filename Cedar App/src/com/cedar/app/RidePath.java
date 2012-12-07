@@ -8,6 +8,7 @@ public class RidePath
 	private ArrayList<Ride> selectedRides;	
 	public LinkedList<IntermediateMapNode> rideNodesInOrder;
 	public ArrayList<Ride> allRides;
+	public static ArrayList<IntermediateMapNode> needToVisit = new ArrayList<IntermediateMapNode>();
 	static String[] rightSubsection = { "MaXair", "Wicked Twister", "Woodstock Express", "WindSeeker", "Calypso" };
 	static String[] leftFork = { "Iron Dragon", "Millenium Force", "Mantis", "Cedar Creek Mine Ride", "Skyhawk", "Wave Swinger", "Maverick" };
 	static String[] rightFork = { "Power Tower", "Top Thrill Dragster", "Matterhorn", "Magnum XL-200", "Monster", "Jr. Gemini", "Scrambler", "Super Himalaya", "Gemini", "Mean Streak" };
@@ -18,7 +19,7 @@ public class RidePath
 		allRides = ListofRides.fullListofRides;
 		rideNodesInOrder =  new LinkedList<IntermediateMapNode>();
 		this.selectedRides = selectedRides;
-		ArrayList<IntermediateMapNode> needToVisit = new ArrayList<IntermediateMapNode>();
+		needToVisit = new ArrayList<IntermediateMapNode>();
 		System.out.println("You have " + selectedRides.size() + " selected rides.");
 		System.out.println("There are " +pathNodes.size() + " path nodes.");
 		for (Ride ride : selectedRides)
